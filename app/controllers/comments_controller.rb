@@ -4,7 +4,23 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = scope.all
+    s = scope
+    if params[:after]
+      s = s.where("id > ?", params[:start])
+    end
+    if params[:before]
+      s = s.where("id < ?", params[:end])
+    end
+    if params[:limit]
+      l = params[:limit].to_i
+      l = 5 if l < 5
+      l = 100 if l > 100
+    else
+      l = 100
+    end
+    s = s.limit(l)
+
+    @comments = s.all
   end
 
   # GET /comments/1
