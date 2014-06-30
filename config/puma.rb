@@ -34,7 +34,7 @@ environment 'production'
 #
 # The default is “false”.
 #
-daemonize
+daemonize true
 # daemonize false
 
 # Store the pid of the server in the file at “path”.
