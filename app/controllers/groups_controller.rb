@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    respond_with @group
   end
 
   # GET /groups/new
@@ -22,13 +23,18 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
+    respond_with @group
   end
 
   # POST /groups
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-    respond_with @group
+    if @group.save
+      respond_with @group, location: @group
+    else
+      respond_with @group.errors, status: :unprocessable_entity
+    end
     # respond_to do |format|
     #   if @group.save
     #     format.html { redirect_to @group, notice: 'Group was successfully created.' }
@@ -58,10 +64,11 @@ class GroupsController < ApplicationController
   # DELETE /groups/1.json
   def destroy
     @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to groups_url }
+    #   format.json { head :no_content }
+    # end
+    respond_with @group
   end
 
   private
