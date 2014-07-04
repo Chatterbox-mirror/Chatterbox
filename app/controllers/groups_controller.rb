@@ -1,10 +1,12 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  has_scope :page, only: :index, allow_blank: true
 
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = apply_scopes(Group.all)
+    respond_with @groups
   end
 
   # GET /groups/1
@@ -15,6 +17,7 @@ class GroupsController < ApplicationController
   # GET /groups/new
   def new
     @group = Group.new
+    respond_with @group
   end
 
   # GET /groups/1/edit
@@ -25,16 +28,16 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @group }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with @group
+    # respond_to do |format|
+    #   if @group.save
+    #     format.html { redirect_to @group, notice: 'Group was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @group }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @group.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /groups/1
