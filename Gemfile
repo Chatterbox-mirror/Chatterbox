@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'responders'
 gem 'kaminari'
 gem 'has_scope'
+gem 'carrierwave'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -45,6 +47,7 @@ end
 
 # Use Capistrano for deployment
 group :development do
+  gem 'byebug'
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
@@ -52,6 +55,33 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+end
+
+
+group :test, :development do
+  gem 'spring-commands-rspec'
+  gem "rspec-rails"
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-rspec', require: false
+  gem 'rack-livereload'
+  gem 'rb-inotify', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-fchange', require: false
+  gem 'guard-cucumber'
+  gem 'guard-bundler'
+  gem 'guard-jruby-rspec', platforms: :jruby
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'ruby_gntp'
+  gem 'quiet_assets'
+  gem 'forgery'
+  gem 'cucumber-rails', require: false
 end
 
 gem 'puma', :platforms => [:jruby, :ruby]

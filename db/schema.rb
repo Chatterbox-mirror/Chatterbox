@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625062049) do
+ActiveRecord::Schema.define(version: 20140706092437) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140625062049) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon"
   end
 
   create_table "groups_users", id: false, force: true do |t|
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140625062049) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
