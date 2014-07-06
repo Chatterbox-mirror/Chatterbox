@@ -33,6 +33,7 @@ gem 'responders'
 gem 'kaminari'
 gem 'has_scope'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
