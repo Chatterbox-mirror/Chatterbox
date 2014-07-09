@@ -284,6 +284,10 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
+    turbolinks-redirect (0.0.1)
+      jquery-rails
+      railties
+      turbolinks
     tzinfo (0.3.39)
     uglifier (2.5.1)
       execjs (>= 0.3.0)
@@ -341,4 +345,5 @@ DEPENDENCIES
   spring-commands-rspec
   sqlite3
   turbolinks
+  turbolinks-redirect
   uglifier (>= 1.3.0)

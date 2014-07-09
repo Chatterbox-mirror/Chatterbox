@@ -1,9 +1,9 @@
   <div class="title">
     <%= image_tag "icons/topic_black.png", size: '25x27', class: 'icon' %>
     <span class="topic-title-<%= @topic.id %>">
-      <%= @topic.name %>
+      <%= @topic.title %>
     </span>
-    <% if(@topic.owner_id == current_user.id || group.owner_id == current_user.id) %>
+    <% if false %>
       <button id="topic-delete-btn" class="btn btn-danger pull-right" type="button" data-id="<%= @topic.id %>">
         <i class="icon-trash"></i>
         Delete
@@ -16,13 +16,11 @@
   </div>
 
   <ul id="comments">
-
+    <%= render @topic.comments %>
   </ul>
-
-  <form id="comment-new-form">
-    <input name="topic_id" type="hidden" value="<%= @topic.id %>" />
+  <%= form_for [@group, @topic, @topic.comments.new], id: 'comment-new-form', remote: true do |f| %>
     <div class="form-fields">
-      <textarea id="comment-content" class="js-editor" name="content"></textarea>
+      <%= f.text_area :content, id: "comment-content", class: "js-editor" %>
     </div>
     <div class="form-actions">
       <a class="md-supported" data-toggle="modal" href="#markdown-cheatsheet">
@@ -32,8 +30,9 @@
       <div class="ctrl-enter">
         <kbd>Enter</kbd>
       </div>
-      <button id="comment-content-submit" class="btn btn-primary" type="button">
+
+      <button id="comment-content-submit" class="btn btn-primary" type="submit">
         Send
       </button>
     </div>
-  </form>
+  <% end %>

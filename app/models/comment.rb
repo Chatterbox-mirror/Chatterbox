@@ -4,4 +4,8 @@ class Comment < ActiveRecord::Base
   scope :after, -> (start) { where("id > ?", start) }
   scope :before, -> (e) { where("id < ?", e) }
 
+
+  def author_name
+    "Guest"
+  end
 end

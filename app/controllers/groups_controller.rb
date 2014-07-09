@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   has_scope :page, only: :index, allow_blank: true
-
+  layout 'groups', only: :show
   # GET /groups
   # GET /groups.json
   def index
@@ -12,7 +12,9 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    respond_with @group
+    respond_with @group do |format|
+      format.html { redirect_to [@group, @group.topics.first]}
+    end
   end
 
   # GET /groups/new

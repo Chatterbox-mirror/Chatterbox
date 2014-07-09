@@ -1,0 +1,12 @@
+li
+  .comment-avatar
+    - if comment.user
+      == link_to comment.user do
+        == image_tag comment.user.avatar, class: 'img-circle'
+  .comment-detail
+    .comment-info
+      = link_to comment.author_name, comment.user
+      span.muted.pull-right
+       | #{comment.created_at}
+    .comment-content
+      | #{comment.content}

@@ -20,4 +20,4 @@ html lang="en"
             #navbar-user.pull-right
 
       .container-fluid#container
-        == yield
+        == content_for?(:content) ? yield(:content) : yield

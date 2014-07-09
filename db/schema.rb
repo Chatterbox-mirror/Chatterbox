@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(version: 20140706092437) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
+    t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "icon"
   end
+
+  add_index "groups", ["owner_id"], name: "index_groups_on_owner_id"
 
   create_table "groups_users", id: false, force: true do |t|
     t.integer "group_id"
@@ -36,14 +39,16 @@ ActiveRecord::Schema.define(version: 20140706092437) do
   add_index "groups_users", ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id", unique: true
 
   create_table "topics", force: true do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.integer  "group_id"
+    t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "topics", ["group_id"], name: "index_topics_on_group_id"
+  add_index "topics", ["owner_id"], name: "index_topics_on_owner_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -63,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140706092437) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["name"], name: "index_users_on_name", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

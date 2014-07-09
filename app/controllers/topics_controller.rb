@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   before_action :find_group
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  layout 'groups'
   # GET /topics
   # GET /topics.json
   def index
