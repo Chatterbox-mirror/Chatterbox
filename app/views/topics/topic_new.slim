@@ -1,0 +1,15 @@
+script#topic-new-tmpl type="text/template"
+  form#topic-new-form.form-horizontal
+    #topic-new-modal.modal.hide
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+        h3 Create a topic
+      .modal-body
+        .control-group
+          label.control-label for="title"
+            | Title
+          .controls
+            input type="text" name="title"
+      .modal-footer
+        button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
+        button#topic-new-submit.btn.btn-primary type="button" = t 'create'

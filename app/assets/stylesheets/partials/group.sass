@@ -1,0 +1,56 @@
+.group
+  height: 150px
+  width: 252px
+  background-color: #FFF
+  @include border-radius(3px)
+  @include box-shadow(2px 2px 3px rgba(34, 25, 25, 0.4))
+
+  .info
+    height: 75px
+    padding: 6px
+    background-color: #398ECA
+    @include border-radius(3px)
+
+  .logo, .intro
+    float: left
+
+  .intro
+    margin-left: 15px
+    width: 150px
+    position: relative
+    a.name, .members-count
+      color: #FFF
+    h4
+      color: #FFF
+      display: inline-block
+      overflow: hidden
+      max-width: 150px
+      height: 20px
+      white-space: nowrap
+      text-overflow: ellipsis
+      font-weight: normal
+    h4, .members-count
+      margin: 0
+    .members-count
+      font-size: 85%
+      margin: 5px 0 5px
+    .actions
+      color: #CCC
+      cursor: pointer
+      margin-left: -4px
+      > [class^="icon-"]
+        margin-right: 0
+        position: relative
+        top: 1px
+    .unread-count
+      position: absolute
+      right: 0
+      bottom: 0
+  .desc
+    border-top: 1px solid #DDD
+    padding: 10px
+
+#all-groups-list .group .info
+  background-color: #BBC1C5
+  .actions
+    color: #FFF

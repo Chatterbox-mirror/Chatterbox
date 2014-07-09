@@ -1,0 +1,227 @@
+.topics
+  width: 220px
+  float: left
+  border-right: 1px solid #828282
+  padding: 8px 0 8px 20px
+  background-color: #E5E5E5
+  #topic-new-btn
+    padding: 6px
+    width: 210px
+    .icon
+      margin-right: 5px
+  hr
+    width: 210px
+    border-top: 2px solid #CCC
+    border-bottom: 2px solid #CCC
+  .topic
+    height: 20px
+    width: 200px
+    background-color: #FFF
+    @include border-radius(6px)
+    @include box-shadow(0px 1px 10px rgba(34, 25, 25, 0.4))
+    padding: 10px
+
+  .topic-list
+    list-style-type: none
+    margin: 0
+    li
+      margin-top: 10px
+      width: 219px
+      font-size: 15px
+      line-height: 31px
+      border: 1px solid #828282
+      background: #BBC1C5
+      @include border-radius(6px)
+      @include border-top-right-radius(0)
+      @include border-bottom-right-radius(0)
+      > a
+        color: #848584
+        text-decoration: none
+        display: block
+        padding: 2px
+        line-height: 31px
+        overflow: hidden
+        max-width: 190px
+        white-space: nowrap
+        text-overflow: ellipsis
+        i.icon-topic
+          width: 23px
+          height: 21px
+          background-position: 2px -5px
+          background: url('/assets/icons/topic_e6.png')
+      span.badge
+        float: right
+        margin-top: -25px
+        margin-right: 5px
+    li.active
+      width: 219px
+      background: white
+      > a
+        color: #000000
+        i.icon-topic
+          background: url('/assets/icons/topic_b3.png')
+
+
+
+.chat-box
+  margin-left: 241px
+  margin-right: 201px
+  background: white
+
+  .title
+    img.icon
+      margin-top: -4px
+    padding: 10px
+    font-weight: bold
+    font-size: 16px
+    border-bottom: 1px solid #828282
+    button
+      margin-top: -4px
+      i
+        bottom: -2px
+    #topic-delete-btn
+      margin-left: 5px
+
+  #comments
+    list-style-type: none
+    margin: 0
+    overflow-y: scroll
+    li
+      padding: 10px
+      min-height: 65px
+      border-bottom: 1px solid #e6e6e6
+      .comment-avatar
+        float: left
+      .comment-detail
+        margin-left: 70px
+      &.notification
+        height: 25px
+        min-height: 25px
+        line-height: 25px
+        background-color: #F5F3F3
+        padding: 0
+        color: #999
+        strong
+          display: inline-block
+          width: 120px
+          border-radius: 3px
+          color: #FFF
+          text-align: center
+          font-weight: 400
+          background: #999
+          height: 25px
+          margin-right: 10px
+        img
+          margin-right: 5px
+
+  #comment-new-form
+    margin: 0
+    #comment-content
+      border: none
+      width: 100%
+      height: 80px
+      margin: 0
+      padding: 4px
+      @include box-sizing(border-box)
+    .form-actions
+      margin: 0
+      padding: 10px
+      border-top: 1px solid #828282
+      border-bottom: 1px solid #828282
+      text-align: right
+      height: 30px
+      background: none
+      #comment-content-submit
+        padding: 3px 20px
+
+
+.users
+  width: 184px
+  background: #F2F2F2
+  float: right
+  border-left: 1px solid #CCC
+  padding: 8px
+  .group-info
+    height: 75px
+  .logo, .intro
+    float: left
+  .intro
+    margin-left: 15px
+    width: 95px
+    h4, p
+      margin: 0
+    h4
+      display: inline-block
+      overflow: hidden
+      max-width: 95px
+      height: 20px
+      white-space: nowrap
+      text-overflow: ellipsis
+      font-weight: normal
+    p
+      font-size: 85%
+      margin: 5px 0 5px
+    .settings
+      color: #9A9A9A
+      cursor: pointer
+      margin-left: -4px
+      i.icon-cog
+        margin-right: 0
+        position: relative
+        top: 1px
+  .members-online-count
+    background-color: #A7A7A7
+    margin-top: 10px
+    text-align: center
+    margin-left: -8px
+    margin-right: -8px
+    padding: 3px 0 3px
+    color: #FFF
+    i.icon-lightbulb
+      margin-right: 5px
+      color: #FFF
+      font-size: 15px
+    .arrow-down
+      display: inline-block
+      width: 0
+      height: 0
+      vertical-align: top
+      border-top:   10px solid #A7A7A7
+      border-right: 10px solid transparent
+      border-left:  10px solid transparent
+      content: ""
+      position: relative
+      bottom: -23px
+      right: 65px
+  .member-list
+    margin: 20px -8px 0 -8px
+    li
+      width: 56px
+      text-align: center
+      margin-left: 0
+      padding: 0 5px 0 5px
+      overflow: hidden
+      position: relative
+      .username
+        color: #ABABAB
+        font-size: 12px
+        margin-top: 5px
+      b.session-state
+        position: absolute
+        right: 17px
+        bottom: 21px
+        display: block
+        width: 8px
+        height: 8px
+        -webkit-border-radius: 500px
+        -moz-border-radius: 500px
+        border-radius: 500px
+      &.online > b.session-state
+        background-color: #01B101
+      &.offline
+        -webkit-filter: grayscale(100%)
+        filter: gray
+        b.session-state
+          background-color: #ACACAC
+
+

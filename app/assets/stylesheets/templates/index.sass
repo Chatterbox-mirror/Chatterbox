@@ -1,0 +1,75 @@
+.home-box
+  background: url("/assets/black_linen_v2.png")
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+
+  .container
+    width: 960px
+    position: absolute
+    left: 50%
+    margin-left: -480px
+    top: 50%
+    margin-top: -278px
+
+  .intro
+    float: left
+    margin-left: 33px
+    margin-top: 10px
+    width: 340px
+    color: white
+    .logo
+      background: url(/assets/line.png) 0 70px repeat-x
+      padding-bottom: 33px
+    h4
+      margin-top: 20px
+      color: #41905A
+      font-size: 19px
+    form
+      margin-top: 30px
+      .input-append
+        margin-bottom: 20px
+      span.add-on
+        color: #CCC
+        height: 30px
+        line-height: 30px
+        font-size: 25px
+        width: 28px
+        text-align: center
+        background: #FFF
+      input[type='text'], input[type='password']
+        width: 288px
+        height: 30px
+        line-height: 30px
+        border-right: 0
+      .actions
+        #sign-in-submit
+          margin-bottom: 20px
+        .btn
+          padding: 11px 45px
+      .errors
+        display: none
+        margin-top: 20px
+      .field.error
+        input
+          border: 2px solid #E74C3C
+          border-right: 0
+          color: #E74C3C
+        span.add-on
+          border: 2px solid #E74C3C
+          border-left: 0
+          color: #E74C3C
+
+  .footer
+    margin-top: 40px
+    border-top: 6px solid #1E1E1E
+    color: #999
+    padding-top: 10px
+
+#chatterbox-example
+  float: left
+  padding: 10px
+  background-color: #666
+  @include border-radius(20px)

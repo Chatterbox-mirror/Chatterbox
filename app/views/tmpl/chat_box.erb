@@ -1,0 +1,39 @@
+<script id="chat-box-tmpl" type="text/template">
+  <div class="title">
+    <img class="icon" src="/assets/icons/topic_black.png" width="25" height="27" />
+    <span class="topic-title-[%= topic.get('_id') %]">
+      [%= topic.get('title') %]
+    </span>
+    [% if(topic.get('owner_id') == current_user.get('_id') || group.get('owner_id') == current_user.get('_id')) { %]
+      <button id="topic-delete-btn" class="btn btn-danger pull-right" type="button" data-id="[%= topic.get('_id') %]">
+        <i class="icon-trash"></i>
+        Delete
+      </button>
+      <button id="topic-edit-btn" class="btn pull-right" type="button">
+        <i class="icon-cog"></i>
+        Settings
+      </button>
+    [% } %]
+  </div>
+
+  <ul id="comments"></ul>
+
+  <form id="comment-new-form">
+    <input name="topic_id" type="hidden" value="[%= topic.get('_id') %]" />
+    <div class="form-fields">
+      <textarea id="comment-content" class="js-editor" name="content"></textarea>
+    </div>
+    <div class="form-actions">
+      <a class="md-supported" data-toggle="modal" href="#markdown-cheatsheet">
+        <i class="icon-info-sign"></i>
+        <%= t('markdown.supported') %>
+      </a>
+      <div class="ctrl-enter">
+        <kbd>Enter</kbd>
+      </div>
+      <button id="comment-content-submit" class="btn btn-primary" type="button">
+        Send
+      </button>
+    </div>
+  </form>
+</script>

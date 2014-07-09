@@ -1,0 +1,42 @@
+<% relationship = 'stranger' %>
+  <li id="group-li-<%= group.id %>">
+    <div class="group">
+      <div class="info">
+        <img class="logo img-circle img-polaroid group-logo-64-<%= group.id %>" alt="default avatar" src="<%= group.icon %>" width="64" height="64" />
+        <div class="intro">
+          <h4>
+            <% if(relationship == "stranger") %>
+              <%= link_to group.name, group %>
+            <% else  %>
+              <a class="name group-name-<%= group.id %>" href="/groups/<%= group.id %>">
+                <%= group.name %>
+              </a>
+            <% end %>
+          </h4>
+          <p class="members-count">
+            <%= group.member_count %> members
+          </p>
+          <% if(relationship == "owner") %>
+            <a class="actions group-edit-btn" data-group-id="<%= group.id %>">
+              <i class="icon-cog"></i>
+              Settings
+            </a>
+          <% elsif(relationship == "member") %>
+            <a class="actions group-quit-btn" data-group-id="<%= group.id %>">
+              <i class="icon-signout"></i>
+              Quit
+            </a>
+          <% elsif(relationship == "stranger") %>
+            <a class="actions group-join-btn" data-group-id="<%= group.id %>">
+              <i class="icon-signin"></i>
+              Join
+            </a>
+          <% end %>
+          <div class="unread-count"></div>
+        </div>
+      </div>
+      <div class="desc" id="group-desc-<%= group.id %>">
+        <%= group.description %>
+      </div>
+    </div>
+  </li>

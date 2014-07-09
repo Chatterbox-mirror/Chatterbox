@@ -1,0 +1,6 @@
+script#topic-member-list-li-tmpl type="text/template"
+  li class=="[%= session_state %]"
+    img.img-circle alt="avatar" width="32" height="32" src=="[%= avatar_url_32 %]"
+    b.session-state
+    div.username
+     | [%= username %]

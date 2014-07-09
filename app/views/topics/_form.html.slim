@@ -1,0 +1,14 @@
+== form_for(@topic, id: 'topic-new-form', class: 'form-horizontal') do |f|
+  #topic-new-modal.modal.hide
+    .modal-header
+      button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+      h3 Create a topic
+    .modal-body
+      .control-group
+        == f.label :title, class: 'control-label' do
+          | Title
+        .controls
+          == f.text_field :title
+    .modal-footer
+      button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
+      button#topic-new-submit.btn.btn-primary type="button" = t 'create'

@@ -1,0 +1,65 @@
+.editor-head {
+  overflow: hidden;
+  padding: 7px 10px;
+  border-top: 1px solid #828282;
+  border-bottom: 1px solid #828282;
+}
+.editor-toolbar {
+  list-style-type: none;
+  margin: 0;
+}
+.editor-toolbar,
+.editor-toolbar li {
+  float: left;
+  margin-right: 8px;
+}
+.editor-toolbar a {
+  display: block;
+  border: 1px solid #fff;
+}
+.editor-toolbar a:hover {
+  border-color: #e6e6e6;
+  background: #f2f2f2;
+  border-radius: 3px;
+}
+.editor-toolbar i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/vendor/markdown_editor_icons.png');
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+
+.editor-icon-head    { background-position: 0 0; }
+.editor-icon-blod    { background-position: -20px 0; }
+.editor-icon-italic  { background-position: -40px 0; }
+.editor-icon-quote   { background-position: -60px 0; }
+.editor-icon-code    { background-position: -80px 0; }
+.editor-icon-pre     { background-position: -100px 0; }
+.editor-icon-ul      { background-position: -120px 0; }
+.editor-icon-ol      { background-position: -140px 0; }
+.editor-icon-link    { background-position: -160px 0; }
+.editor-icon-picture { background-position: -180px 0; }
+
+.editor-preview {
+  padding: 6px 8px;
+  background: #f9f9f9;
+  border-top: 1px solid #ccc;
+}
+
+.btn2 {
+  display: inline-block;
+  padding: 1px 10px;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  line-height: 18px;
+}

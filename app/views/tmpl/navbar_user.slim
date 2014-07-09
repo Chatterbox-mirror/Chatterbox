@@ -1,0 +1,11 @@
+script#navbar-user-tmpl type="text/template"
+  li
+    a.avatar-link href="#"
+      img.logo.img-circle alt="avatar" width="32" height="32" src=="[%= avatar_url_32 %]"
+  li
+    a.username.dropdown-toggle href="#" data-toggle="dropdown"
+      ' [%= username %]
+      b.caret
+    ul.dropdown-menu
+      li
+        a#sign-out-link href="#" = t('sign_out')

@@ -1,0 +1,13 @@
+script#comment-tmpl type="text/template"
+  li
+    .comment-avatar
+      a href="#"
+        img.img-circle alt="avatar" width="64" height="64" src=="[%= author_avatar_url_64 %]"
+    .comment-detail
+      .comment-info
+        a href="/"
+          | [%= author %]
+        span.muted.pull-right
+         | [%= created_at %]
+      .comment-content
+        | [%= content_html %]

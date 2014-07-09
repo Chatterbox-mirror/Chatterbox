@@ -1,0 +1,21 @@
+script#dashboard-tmpl type="text/template"
+  .notifications
+    .header
+      | New Notifications
+      b.arrow-down
+    ul#notice-list
+
+  .groups
+    .page-header#my-groups-header
+      i.icon-heart
+      span.title My Groups
+      button#group-new-btn.btn.btn-primary type="button"
+        i.icon-plus
+        |  New Group
+    ul#my-groups-list.thumbnails
+
+    .page-header#all-groups-header
+      img.icon-earth src="/assets/icons/earth.png"
+      span.title All Groups
+
+    ul#all-groups-list.thumbnails

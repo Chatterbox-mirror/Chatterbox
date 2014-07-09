@@ -1,0 +1,89 @@
+.groups
+  padding: 20px 15px 20px
+  background-color: #E5E5E5
+  @include box-sizing(border-box)
+  float: left
+  width: calc(100% - 201px)
+
+.notifications
+  float: right
+  width: 200px
+  background: #F2F2F2
+  border-left: 1px solid #CCCCCC
+  .header
+    background-color: #A7A7A7
+    padding: 6px 0 6px 10px
+    color: #FFF
+    font-size: 16px
+    .arrow-down
+      display: inline-block
+      width: 0
+      height: 0
+      vertical-align: top
+      border-top:   10px solid #A7A7A7
+      border-right: 10px solid transparent
+      border-left:  10px solid transparent
+      content: ""
+      position: relative
+      bottom: -26px
+      right: 45px
+  #notice-list
+    list-style-type: none
+    margin: 0
+    li
+      height: 65px
+      line-height: 65px
+      border-top: 1px solid #E6E6E6
+      cursor: pointer
+      padding: 0 5px 0
+      img
+        width: 32px
+        height: 32px
+      .info
+        float: right
+        margin-top: 12px
+        font-size: 13px
+        width: 135px
+        .name, .activities-count
+          height: 20px
+          line-height: 20px
+        .name
+          color: #AAA
+          overflow: hidden
+          max-width: 135px
+          white-space: nowrap
+          text-overflow: ellipsis
+        .activities-count
+          margin-top: 2px
+          color: #878787
+      &:first-child
+        border-top: 0
+      &:hover
+        background-color: mix(#F2F2F2, white, 20%)
+
+#my-groups-header, #all-groups-header
+  height: 30px
+  .title
+    margin-left: 10px
+    font-size: 16px
+    color: #808080
+    position: relative
+    bottom: -5px
+  > [class^="icon-"]
+    font-size: 22px
+    position: relative
+    bottom: -7px
+
+#my-groups-header
+  .icon-heart
+    color: #D94B3B
+  #group-new-btn
+    float: right
+
+.group-edit-modal
+  .modal-footer
+    padding-left: 15px
+    hr
+      margin: 10px 0
+    button:first-child, .group-destroy-btn
+      margin-left: 160px

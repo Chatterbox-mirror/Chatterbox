@@ -1,0 +1,31 @@
+script#group-edit-tmpl type="text/template"
+  form.form-horizontal id=="group-edit-form-[%= _id %]"
+    .modal.hide.group-edit-modal id=="group-edit-modal-[%= _id %]"
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+        h3
+          ' Editing
+          span class=="group-name-[%= _id %]"
+            | [%= name %]
+      .modal-body
+        .control-group
+          label.control-label for="name"
+            = t 'mongoid.attributes.group.name'
+          .controls
+            input type="text" name="name" value=="[%= name %]" required=true
+        .control-group
+          label.control-label for="description"
+            = t 'mongoid.attributes.group.description'
+          .controls
+            input type="text" name="description" value=="[%= description %]"
+        .control-group
+          label.control-label for="logo"
+            | Logo
+          .controls
+            input type="file" name="logo" id=="group-logo-field-[%= _id %]"
+      .modal-footer
+        button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
+        button.btn.btn-primary.group-edit-submit data-group-id=="[%= _id %]" type="button" = t 'update'
+        hr
+        button.btn.btn-danger.group-destroy-btn type="button" data-group-id=="[%= _id %]"
+          | Delete

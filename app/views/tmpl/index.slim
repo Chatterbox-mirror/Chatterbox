@@ -1,0 +1,34 @@
+script#index-tmpl type="text/template"
+  .container
+    .clearfix
+      img#chatterbox-example.img-polaroid src="/assets/chatterbox.png"
+
+      .intro
+        .logo
+          img src="/assets/logos/logo_index_03.png" alt="logo"
+        h4
+          | Online chatting service for hackers!
+        form#sign-in-form
+          fieldset
+            .field.input-append
+              input autofocus="autofocus" name="login" type="text" placeholder=t('index.login')
+              span.add-on
+                i.icon-user
+            .field.input-append
+              input name="password" type="password" placeholder=t('password')
+              span.add-on
+                i.icon-key
+          .actions
+            button#sign-in-submit.btn.btn-primary.btn-large.btn-block type="button"
+              = t('sign_in')
+            a.btn.btn-large.btn-block target="_blank" href="https://gitcafe.com/signup"
+              = t('sign_up')
+          .errors.alert.alert-error
+            i.icon-remove-sign
+            |  Invalid username or password
+
+    .footer
+      span.help
+        | About / Help
+      span.powered.pull-right
+        | Powered by GitCafe

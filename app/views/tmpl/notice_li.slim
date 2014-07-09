@@ -1,0 +1,8 @@
+script#notice-li-tmpl type="text/template"
+  li.notice-li data-href=="/groups/[%= _id %]"
+    img class=="img-circle img-polaroid group-logo-32-[%= _id %]" src=="[%= logo_url_32 %]"
+    .info
+      .name
+        | [%= name %]
+      .activities-count
+        | Have [%= count %] new activities

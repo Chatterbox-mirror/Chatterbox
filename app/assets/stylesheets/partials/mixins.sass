@@ -1,0 +1,18 @@
+@mixin swap-button-color($color, $hover, $active)
+  background-color: $color
+  &:hover,
+  &:focus,
+  .btn-group:focus &.dropdown-toggle
+    background-color: $hover
+  &:active,
+  .btn-group.open &.dropdown-toggle,
+  &.active
+    background-color: $active
+
+@mixin inline-block
+  display: inline-block
+  zoom: 1
+  *display: inline
+
+@mixin calc($property, $expression)
+  #{$property}: calc(#{$expression})

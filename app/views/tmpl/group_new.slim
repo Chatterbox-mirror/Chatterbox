@@ -1,0 +1,25 @@
+script#group-new-tmpl type="text/template"
+  form#group-new-form.form-horizontal
+    #group-new-modal.modal.hide
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+        h3 = t 'dashboard.create_group'
+      .modal-body
+        .control-group
+          label.control-label for="name"
+            = t 'mongoid.attributes.group.name'
+          .controls
+            input type="text" name="name" id="group-name"
+        .control-group
+          label.control-label for="description"
+            = t 'mongoid.attributes.group.description'
+          .controls
+            input type="text" name="description" id="group-description"
+        .control-group
+          label.control-label for="logo"
+            | Logo
+          .controls
+            input type="file" name="logo" id="group-logo"
+      .modal-footer
+        button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
+        button#group-new-submit.btn.btn-primary type="button" = t 'create'

@@ -1,0 +1,23 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title ChatterBox
+
+    link href="/favicon.ico" rel="shortcut icon"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag 'application'
+
+  body
+    main#main role="main"
+      .navbar.navbar-static-top
+        .navbar-inner
+          .container-fluid
+            = link_to root_path, class: 'brand' do
+              = image_tag "logos/logo.png", alt: "logo"
+            #navbar-user.pull-right
+
+      .container-fluid#container
+        == yield

@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
+  <div class="title">
+    <%= image_tag "icons/topic_black.png", size: '25x27', class: 'icon' %>
+    <span class="topic-title-<%= @topic.id %>">
+      <%= @topic.name %>
+    </span>
+    <% if(@topic.owner_id == current_user.id || group.owner_id == current_user.id) %>
+      <button id="topic-delete-btn" class="btn btn-danger pull-right" type="button" data-id="<%= @topic.id %>">
+        <i class="icon-trash"></i>
+        Delete
+      </button>
+      <button id="topic-edit-btn" class="btn pull-right" type="button">
+        <i class="icon-cog"></i>
+        Settings
+      </button>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @topic.name %>
-</p>
+  <ul id="comments">
 
-<p>
-  <strong>Description:</strong>
-  <%= @topic.description %>
-</p>
+  </ul>
 
-<p>
-  <strong>Group:</strong>
-  <%= @topic.group_id %>
-</p>
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+  <form id="comment-new-form">
+    <input name="topic_id" type="hidden" value="<%= @topic.id %>" />
+    <div class="form-fields">
+      <textarea id="comment-content" class="js-editor" name="content"></textarea>
+    </div>
+    <div class="form-actions">
+      <a class="md-supported" data-toggle="modal" href="#markdown-cheatsheet">
+        <i class="icon-info-sign"></i>
+        <%= t('markdown.supported') %>
+      </a>
+      <div class="ctrl-enter">
+        <kbd>Enter</kbd>
+      </div>
+      <button id="comment-content-submit" class="btn btn-primary" type="button">
+        Send
+      </button>
+    </div>
+  </form>

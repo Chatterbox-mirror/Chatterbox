@@ -1,0 +1,13 @@
+<script id="topic-group-info-tmpl" type="text/template">
+  <img class="logo img-circle img-polaroid" alt="group logo" src="[%= logo_url_64 %]" width="64" height="64"/>
+  <div class="intro">
+    <h4 class="group-name-[%= _id %]">[%= name %]</h4>
+    <p>[%= member_count %] members</p>
+    [% if(current_user.get('_id') == owner_id){ %]
+      <a class="settings group-edit-btn" data-group-id="[%= _id %]">
+        <i class="icon-cog"></i>
+        Settings
+      </a>
+    [% } %]
+  </div>
+</script>

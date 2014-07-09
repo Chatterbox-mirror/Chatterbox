@@ -1,0 +1,39 @@
+html, body, #main, .layout
+  height: 100%
+
+.container-fluid
+  padding: 0
+
+#container
+  @include calc(height, "100% - 48px")
+
+.view
+  border-top: 3px solid #CCCCCC
+  @include calc(height, "100% - 3px")
+  @include calc(min-height, "100% - 3px")
+  height: auto !important
+  @include clearfix
+
+#navbar-user
+  border-left: 1px solid #CCC
+  width: 170px
+  padding-left: 10px
+  .nav
+    margin: 0
+  .username
+    width: 123px
+    padding-right: 0
+    .caret
+      float: right
+      border-top: 10px solid #CCC
+      border-right: 10px solid rgba(0, 0, 0, 0)
+      border-left: 10px solid rgba(0, 0, 0, 0)
+      margin-top: 6px
+  .dropdown-menu
+    margin-left: -8px
+    width: 193px
+    &:before
+      left: 160px
+    &:after
+      left: 161px
+

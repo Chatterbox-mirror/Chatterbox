@@ -1,0 +1,43 @@
+<script id="group-tmpl" type="text/template">
+  <li id="group-li-[%= _id %]">
+    <div class="group">
+      <div class="info">
+        <img class="logo img-circle img-polaroid group-logo-64-[%= _id %]" alt="default avatar" src="[%= logo_url_64 %]" width="64" height="64" />
+        <div class="intro">
+          <h4>
+            [% if(relationship == "stranger"){ %]
+              [%= name %]
+            [% } else { %]
+              <a class="name group-name-[%= _id %]" href="/groups/[%= _id %]">
+                [%= name %]
+              </a>
+            [% } %]
+          </h4>
+          <p class="members-count">
+            [%= member_count %] members
+          </p>
+          [% if(relationship == "owner"){ %]
+            <a class="actions group-edit-btn" data-group-id="[%= _id %]">
+              <i class="icon-cog"></i>
+              Settings
+            </a>
+          [% } else if(relationship == "member"){ %]
+            <a class="actions group-quit-btn" data-group-id="[%= _id %]">
+              <i class="icon-signout"></i>
+              Quit
+            </a>
+          [% } else if(relationship == "stranger"){ %]
+            <a class="actions group-join-btn" data-group-id="[%= _id %]">
+              <i class="icon-signin"></i>
+              Join
+            </a>
+          [% } %]
+          <div class="unread-count"></div>
+        </div>
+      </div>
+      <div class="desc" id="group-desc-[%= _id %]">
+        [%= description %]
+      </div>
+    </div>
+  </li>
+</script>
