@@ -330,6 +330,7 @@ DEPENDENCIES
   launchy
   mini_magick
   nprogress-rails
+  puma
   quiet_assets
   rack-livereload
   rails (= 4.0.4)

@@ -87,7 +87,7 @@ group :test do
   gem 'cucumber-rails', require: false
 end
 
-# gem 'puma', :platforms => [:jruby, :ruby]
+gem 'puma', :platforms => [:jruby, :ruby]
 #gem 'websocket-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
