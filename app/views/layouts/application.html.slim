@@ -24,7 +24,7 @@ html lang="en"
                     img.logo.img-circle alt="avatar" width="32" height="32" src=="<%= current_user.avatar %>"
                 li
                   a.username.dropdown-toggle href="#" data-toggle="dropdown"
-                    ' #{current_user.name}
+                    ' #{current_user.try :name}
                     b.caret
                   ul.dropdown-menu
                     li

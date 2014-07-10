@@ -22,14 +22,15 @@ html lang="en"
               h4
                 | Online chatting service for hackers!
 
-              form#sign-in-form
+              form#sign-in-form action="/users/sign_in" method="post"
+                input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
                 fieldset
                   .field.input-append
-                    input autofocus="autofocus" name="login" type="text" placeholder=t('index.login')
+                    input autofocus="autofocus" id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
                     span.add-on
                       i.icon-user
                   .field.input-append
-                    input name="password" type="password" placeholder=t('password')
+                    input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
                     span.add-on
                       i.icon-key
                 .actions
