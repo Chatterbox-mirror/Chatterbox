@@ -1,12 +1,12 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   has_scope :page, only: :index, allow_blank: true
-  layout 'groups', only: :show
+  layout 'groups', except: [:index]
   # GET /groups
   # GET /groups.json
   def index
     @groups = apply_scopes(Group.all)
-    respond_with @groups
+    respond_with @groups, layout: 'application'
   end
 
   # GET /groups/1

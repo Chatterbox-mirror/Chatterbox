@@ -1,8 +1,8 @@
 ChatterboxRails::Application.routes.draw do
   resource :current_user
-
+  #
   devise_for :users
-
+  resources :users
   resources :groups do
     resources :topics do
       resources :comments
@@ -10,7 +10,8 @@ ChatterboxRails::Application.routes.draw do
     resources :members
   end
 
-  resources :users
+  get '/dashboard' => 'dashboard#index'
+
   root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
