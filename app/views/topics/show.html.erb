@@ -18,7 +18,8 @@
   <ul id="comments">
     <%= render @topic.comments %>
   </ul>
-  <%= form_for [@group, @topic, @topic.comments.new], id: 'comment-new-form', remote: true do |f| %>
+
+  <%= form_for [@group, @topic, @topic.comments.new], remote: true, html: {id: 'comment-new-form'} do |f| %>
     <div class="form-fields">
       <%= f.text_area :content, id: "comment-content", class: "js-editor" %>
     </div>
@@ -27,6 +28,7 @@
         <i class="icon-info-sign"></i>
         <%= t('markdown.supported') %>
       </a>
+
       <div class="ctrl-enter">
         <kbd>Enter</kbd>
       </div>
@@ -36,3 +38,8 @@
       </button>
     </div>
   <% end %>
+<script type="text/javascript">
+$('#comments').scrollTo('100%');
+$('#comment-content').focus();
+$('#comments').timeago();
+</script>

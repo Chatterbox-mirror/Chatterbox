@@ -6,7 +6,7 @@ li
   .comment-detail
     .comment-info
       = link_to comment.author_name, comment.user
-      span.muted.pull-right
+      time.muted.pull-right.timeago datetime=="#{comment.created_at.iso8601}"
        | #{comment.created_at}
     .comment-content
       | #{comment.content}

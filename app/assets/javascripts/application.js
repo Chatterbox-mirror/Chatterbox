@@ -16,3 +16,10 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require turbolinks.redirect
+//= require vendor/bootstrap
+//= require vendor/markdown
+//= require_tree ./vendor/jquery
+//= require dashboard
+//= require vendor/timeago
+//= require vendor/locales/timeago.en
+//= require chatting

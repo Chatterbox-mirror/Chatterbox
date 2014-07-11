@@ -12,23 +12,24 @@ html lang="en"
 
   body
     main#main role="main"
-      .navbar.navbar-static-top
-        .navbar-inner
-          .container-fluid
-            = link_to root_path, class: 'brand' do
-              = image_tag "logos/logo.png", alt: "logo"
-            #navbar-user.pull-right
-              ul.nav
-                li
-                  a.avatar-link href="#"
-                    img.logo.img-circle alt="avatar" width="32" height="32" src=="<%= current_user.avatar %>"
-                li
-                  a.username.dropdown-toggle href="#" data-toggle="dropdown"
-                    ' #{current_user.try :name}
-                    b.caret
-                  ul.dropdown-menu
-                    li
-                      a#sign-out-link href="#" = t('sign_out')
+      .layout
+        .navbar.navbar-static-top
+          .navbar-inner
+            .container-fluid
+              = link_to root_path, class: 'brand' do
+                = image_tag "logos/logo.png", alt: "logo"
+              #navbar-user.pull-right
+                ul.nav
+                  li
+                    a.avatar-link href="#"
+                      img.logo.img-circle alt="avatar" width="32" height="32" src=="<%= current_user.avatar %>"
+                  li
+                    a.username.dropdown-toggle href="#" data-toggle="dropdown"
+                      ' #{current_user.try :name}
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a#sign-out-link href="#" = t('sign_out')
 
-      .container-fluid#container
-        == content_for?(:content) ? yield(:content) : yield
+        .container-fluid#container
+          == content_for?(:content) ? yield(:content) : yield

@@ -11,8 +11,15 @@ html, body, #main, .layout
   border-top: 3px solid #CCCCCC
   @include calc(height, "100% - 3px")
   @include calc(min-height, "100% - 3px")
-  height: auto !important
+  overflow: hidden
+  //height: auto !important
   @include clearfix
+  .users
+    height: 100%
+  .topics
+    height: 100%
+  .chat-box
+    height: 100%
 
 #navbar-user
   border-left: 1px solid #CCC

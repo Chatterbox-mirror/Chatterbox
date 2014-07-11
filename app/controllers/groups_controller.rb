@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     respond_with @group do |format|
-      format.html { redirect_to [@group, @group.topics.first]}
+      format.html { redirect_to [@group, @group.topics.first] if @group.topics.count > 0 }
     end
   end
 

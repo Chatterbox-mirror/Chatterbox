@@ -1,28 +1,29 @@
 - content_for :content
-  .users
-    .group-info
+  #topic-view.view data-group-id=="#{@group.try(:id)}"
+    .users
+      .group-info
 
-    .members-online-count
-      i.icon-lightbulb
-      span#members-online-count 0
-      |  members online
-      b.arrow-down
-    ul.thumbnails.member-list
+      .members-online-count
+        i.icon-lightbulb
+        span#members-online-count 0
+        |  members online
+        b.arrow-down
+      ul.thumbnails.member-list
 
 
-  .topics
-    button#topic-new-btn.btn.btn-primary
-      = image_tag "icons/new_topic.png", class: 'icon'
-      | New Topic
+    .topics
+      button#topic-new-btn.btn.btn-primary
+        = image_tag "icons/new_topic.png", class: 'icon'
+        | New Topic
 
-    hr
+      hr
 
-    h4.muted Topics:
+      h4.muted Topics:
 
-    ul.topic-list
-      = render 'groups/topic_list'
+      ul.topic-list
+        = render 'groups/topic_list'
 
-  .chat-box
-    == yield
+    .chat-box
+      == yield
 
 == render :file => 'layouts/application'
