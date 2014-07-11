@@ -23,4 +23,3 @@ class MembersController < ApplicationController
     @group = Group.find params[:group_id]
   end
 end
-

@@ -21,16 +21,18 @@
               <i class="icon-cog"></i>
               Settings
             </a>
-          <% elsif(relationship == "member") %>
-            <a class="actions group-quit-btn" data-group-id="<%= group.id %>">
-              <i class="icon-signout"></i>
-              Quit
-            </a>
-          <% elsif(relationship == "stranger") %>
-            <a class="actions group-join-btn" data-group-id="<%= group.id %>">
-              <i class="icon-signin"></i>
-              Join
-            </a>
+          <% end %>
+          <% if group.has_member?(current_user) %>
+<%= link_to quit_group_path(group), method: 'post', remote: true, class: 'actions group-quit-btn' do %>
+  <i class="icon-signout"></i>
+  Quit
+<% end %>
+          <% else %>
+
+<%= link_to join_group_path(group), method: 'post', remote: true, class: 'actions group-join-btn' do %>
+  <i class="icon-signin"></i>
+  Join
+<% end %>
           <% end %>
           <div class="unread-count"></div>
         </div>

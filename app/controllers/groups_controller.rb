@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new, :join, :quit]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :join, :quit]
   has_scope :page, only: :index, allow_blank: true
   layout 'groups', except: [:index]
   # GET /groups
@@ -71,6 +72,14 @@ class GroupsController < ApplicationController
     #   format.json { head :no_content }
     # end
     respond_with @group
+  end
+
+  def join
+    @group.members << current_user
+  end
+
+  def quit
+    @group.members.delete(current_user)
   end
 
   private

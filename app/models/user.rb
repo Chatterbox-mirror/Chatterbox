@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_and_belongs_to_many :groups
   mount_uploader :avatar
+  scope :online, -> { where(online: true) }
 
   # def self.find_for_database_authentication(conditions={})
   #   self.where("name = ?", conditions[:email]).limit(1).first ||

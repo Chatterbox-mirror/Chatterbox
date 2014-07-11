@@ -12,4 +12,8 @@ class Group < ActiveRecord::Base
   def description
     ''
   end
+
+  def has_member?(user)
+    members.include?(user)
+  end
 end

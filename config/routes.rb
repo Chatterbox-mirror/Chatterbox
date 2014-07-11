@@ -4,6 +4,10 @@ ChatterboxRails::Application.routes.draw do
   devise_for :users
   resources :users
   resources :groups do
+    member do
+      post :join
+      post :quit
+    end
     resources :topics do
       resources :comments
     end
