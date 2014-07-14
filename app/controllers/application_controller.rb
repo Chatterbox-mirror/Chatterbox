@@ -15,4 +15,15 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
+  # before_filter :check_auth, if: -> { request.headers['Authorization'] }
+
+
+  # def check_auth
+  #   authenticate_or_request_with_http_basic do |username,password|
+  #     resource = User.find_by_email(username)
+  #     if resource.valid_password?(password)
+  #       sign_in :user, resource
+  #     end
+  #   end
+  # end
 end

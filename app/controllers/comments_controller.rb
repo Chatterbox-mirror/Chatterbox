@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   has_scope :after, only: :index
   has_scope :before, only: :index
   has_scope :limit, default: 50, only: :index
+
   # GET /comments
   # GET /comments.json
   def index
@@ -32,15 +33,6 @@ class CommentsController < ApplicationController
     @comment = scope.new(comment_params)
     @comment.save
     respond_with @comment, location: [@group, @topic, @comment]
-    # respond_to do |format|
-    #   if @comment.save
-    #     format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-    #     format.json { render action: 'show', status: :created, location: @comment }
-    #   else
-    #     format.html { render action: 'new' }
-    #     format.json { render json: @comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /comments/1
@@ -48,15 +40,6 @@ class CommentsController < ApplicationController
   def update
     @comment.update(comment_params)
     respond_with @comment, location: [@group, @topic, @comment]
-    # respond_to do |format|
-    #   if @comment.update(comment_params)
-    #     format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-    #     format.json { head :no_content }
-    #   else
-    #     format.html { render action: 'edit' }
-    #     format.json { render json: @comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /comments/1
