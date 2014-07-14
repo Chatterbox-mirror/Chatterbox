@@ -33,5 +33,9 @@
 
     .chat-box
       == yield
+  = render 'topics/form', topic: @group.topics.new
+  coffee:
+    $('#topic-new-btn.btn').click ->
+      $('#topic-new-modal').modal('toggle')
 
 == render :file => 'layouts/application'

@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new]
   before_action :find_group
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   layout 'groups'
@@ -76,6 +77,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:name, :description, :group_id)
+      params.require(:topic).permit(:title, :description, :group_id)
     end
 end

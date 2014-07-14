@@ -6,6 +6,6 @@ class Comment < ActiveRecord::Base
 
 
   def author_name
-    "Guest"
+    user.try( :name) || "Guest"
   end
 end
