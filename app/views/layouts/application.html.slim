@@ -9,6 +9,7 @@ html lang="en"
     link href="/favicon.ico" rel="shortcut icon"
     = stylesheet_link_tag "application"
     = javascript_include_tag 'application'
+    = csrf_meta_tags
 
   body
     main#main role="main"
@@ -24,12 +25,12 @@ html lang="en"
                     a.avatar-link href="#"
                       img.logo.img-circle alt="avatar" width="32" height="32" src=="<%= current_user.avatar %>"
                   li
-                    a.username.dropdown-toggle href="#" data-toggle="dropdown"
+                    a#usermenu.username.dropdown-toggle href="#" data-toggle="dropdown"
                       ' #{current_user.try :name}
                       b.caret
-                    ul.dropdown-menu
+                    ul.dropdown-menu role="menu"  aria-labelledby="usermenu"
                       li
-                        a#sign-out-link href="#" = t('sign_out')
+                        = link_to t('sign_out'), destroy_user_session_path, id: 'sign-out-link', method: 'delete'
 
         .container-fluid#container
           == content_for?(:content) ? yield(:content) : yield
