@@ -1,4 +1,4 @@
-== form_for(@group, class: 'form-horizontal', id: "group-edit-form-#{@group.id}") do |f|
+== form_for(@group, html:{class: 'form-horizontal', id: "group-edit-form-#{@group.id}"} ) do |f|
   .modal.hide.group-edit-modal id=="group-edit-modal-<%= @group.id %>"
     .modal-header
       button.close type="button" data-dismiss="modal" aria-hidden="true" &times;

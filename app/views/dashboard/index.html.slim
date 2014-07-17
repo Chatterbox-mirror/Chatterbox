@@ -19,3 +19,11 @@
 
   ul#all-groups-list.thumbnails
     = render Group.all
+
+= render template: 'groups/new'
+
+
+coffee:
+  $('#group-new-btn').click (e) ->
+    $('#group-new-modal').modal('toggle')
+    return false

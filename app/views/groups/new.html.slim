@@ -1,0 +1,25 @@
+== form_for(Group.new, html: { class: 'form-horizontal', id: "group-new-form" }, remote: true) do |f|
+  #group-new-modal.modal.hide
+    .modal-header
+      button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+      h3 = t 'dashboard.create_group'
+    .modal-body
+      .control-group
+        label.control-label for="name"
+          = t 'mongoid.attributes.group.name'
+        .controls
+          = f.text_field :name, id: "group-name"
+      .control-group
+        label.control-label for="description"
+          = t 'mongoid.attributes.group.description'
+        .controls
+          = f.text_field :description, id: "group-description"
+      .control-group
+        label.control-label for="logo"
+          | Logo
+        .controls
+          = f.file_field :icon, id: "group-logo"
+    .modal-footer
+      button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
+      = f.submit t('create'), id: 'group-new-submit', class: 'btn btn-primary'
+
