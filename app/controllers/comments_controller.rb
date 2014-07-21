@@ -10,7 +10,9 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = apply_scopes(scope)
-    respond_with @comments
+    respond_with @comments do |format|
+      format.html { render :layout => false}
+    end
   end
 
   # GET /comments/1

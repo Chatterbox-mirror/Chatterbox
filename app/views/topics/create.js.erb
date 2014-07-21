@@ -1,2 +1,5 @@
+<% if @topic.persisted? %>
 $('#topic-new-modal').modal('hide');
 $('.topic-list').html("<%= j render('groups/topic_list')%>")
+$('#topic_title').val('')
+<% end %>
