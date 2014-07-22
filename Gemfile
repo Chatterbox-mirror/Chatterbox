@@ -97,3 +97,4 @@ gem 'puma', :platforms => [:jruby, :ruby]
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'nprogress-rails'
+gem 'activeadmin', github: 'gregbell/active_admin'

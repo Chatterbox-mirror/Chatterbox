@@ -1,4 +1,6 @@
 ChatterboxRails::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resource :current_user
   #
   devise_for :users
