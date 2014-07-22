@@ -216,6 +216,7 @@ GEM
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
+    posix-spawn (0.3.6)
     pry (0.10.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -224,6 +225,9 @@ GEM
       pry (>= 0.9.10)
     puma (2.8.2)
       rack (>= 1.1, < 2.0)
+    pygments.rb (0.5.1)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -258,6 +262,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.0.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec (3.0.0)
@@ -342,6 +347,7 @@ GEM
       rack (>= 1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -379,16 +385,19 @@ DEPENDENCIES
   kaminari
   launchy
   mini_magick
+  nokogiri
   non-stupid-digest-assets
   nprogress-rails
   pry-rails
   puma
+  pygments.rb
   quiet_assets
   rack-livereload
   rails (= 4.0.4)
   rb-fchange
   rb-fsevent
   rb-inotify
+  redcarpet
   responders
   rspec-rails
   ruby_gntp

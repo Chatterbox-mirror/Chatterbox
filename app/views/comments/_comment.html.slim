@@ -9,4 +9,4 @@ li data-comment-id="#{comment.id}"
       time.muted.pull-right.timeago datetime=="#{comment.created_at.iso8601}"
        | #{comment.created_at}
     .comment-content
-      | #{comment.content}
+      | #{comment.html_content}

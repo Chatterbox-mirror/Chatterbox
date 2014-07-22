@@ -98,3 +98,6 @@ gem 'puma', :platforms => [:jruby, :ruby]
 # gem 'debugger', group: [:development, :test]
 gem 'nprogress-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'redcarpet'
+gem 'pygments.rb'
+gem 'nokogiri'
