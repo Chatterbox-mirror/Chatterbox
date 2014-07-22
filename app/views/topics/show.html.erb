@@ -42,20 +42,11 @@
 $('#comments').scrollTo('100%');
 $('#comment-content').focus();
 $('#comments').timeago();
+window.pullComments = Puller("<%= url_for([@group, @topic, :comments])%>");
+
 (function(){
-  var locking = false;
-  var timer = setInterval(function(){
-    locking = true;
-    $.get("<%= url_for([@group, @topic, :comments])%>", {
-      after: $('#comments').children().last().data('comment-id')
-    }).done(function(data){
-      $('#comments').append(data);
-      $('#comments').scrollTo('100%');
-      $('#comments').timeago('refresh');
-    }).always(function(){
-      locking = false;
-    })
-  }, 5000)
+
+  var timer = setInterval(window.pullComments, 5000)
   $(document).bind('page:before-change', function(){
     clearInterval(timer);
   })
