@@ -1,21 +1,30 @@
 A prototype for developing mobile apps based on Rails
 
-API: https://gitcafe.com/GitCafe/Chatterbox/wiki
+
 
 Installation
 
 Prerequisite
 
-Ruby >= 2.0.0
-Git
+- Ruby >= 2.0.0
+- Git
+
+First get the source code of Chatterbox-rails
 
 	git clone git://gitcafe.com/ShiningRay/chatterbox-rails.git
 	bundle
+
+then modify `database.yml.example` in `config` directory and save as `database.yml`, then setup database
+
 	bundle exec rake db:setup
+
+After created database
+
 	bundle exec rails server
 
+Then you can open http://localhost:3000/ in browser and use "chatterbox@gitcafe.com" and "chatterbox" to sign in
 
-http://localhost:3000/admin to access admin panel
-default admin: chatterbox@gitcafe.com password: chatterbox
+Also you can access http://localhost:3000/admin to use admin panel. Default admin: chatterbox@gitcafe.com password: chatterbox
 
-http://localhost:3000/
+
+API: https://gitcafe.com/GitCafe/Chatterbox/wiki

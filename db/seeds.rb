@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.where(email: 'admin@example.com').destroy
+AdminUser.where(email: 'admin@example.com').destroy_all
 AdminUser.create email: 'chatterbox@gitcafe.com', password: 'chatterbox', password_confirmation: 'chatterbox'
 User.create name: 'Chatterbox', email: 'chatterbox@gitcafe.com', password: 'chatterbox', password_confirmation: 'chatterbox'

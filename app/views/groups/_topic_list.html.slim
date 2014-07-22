@@ -1,2 +1,5 @@
 - @group.topics.each do |topic|
-	li= link_to_unless_current topic.title, [@group, topic]
+  li class=="#{"active" if @topic == topic}"
+    = link_to [@group, topic] do
+      i.icon-topic
+      = topic.title

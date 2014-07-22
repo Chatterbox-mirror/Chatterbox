@@ -34,7 +34,8 @@ html lang="en"
                     span.add-on
                       i.icon-key
                 .actions
-                  == link_to t('sign_in'), new_user_session_path, id: 'sign-in-submit', class: 'btn btn-primary btn-large btn-block'
+
+                  input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value="#{t('sign_in')}"
                   == link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
 
                 .errors.alert.alert-error
