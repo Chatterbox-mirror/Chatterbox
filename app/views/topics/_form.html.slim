@@ -1,8 +1,13 @@
-== form_for([topic.group, topic], remote: true, html: {id: 'topic-new-form', class: 'form-horizontal'}) do |f|
-  #topic-new-modal.modal.hide
+== form_for([topic.group, topic], remote: true, html: {id: topic.new_record? ? 'topic-new-form' : 'topic-edit-form', class: 'form-horizontal'}) do |f|
+  .modal.hide id="#{topic.new_record? ? 'topic-new-modal' : 'topic-edit-modal'}"
     .modal-header
       button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
-      h3 Create a topic
+      - if topic.new_record?
+        h3 Create a topic
+      - else
+        h3
+          ' Edit
+          span class="topic-title-#{topic.id}" = topic.title
     .modal-body
       .control-group
         == f.label :title, class: 'control-label' do
@@ -11,4 +16,4 @@
           == f.text_field :title
     .modal-footer
       button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
-      button#topic-new-submit.btn.btn-primary type="submit" = t 'create'
+      input#topic-new-submit.btn.btn-primary type="submit" value="#{ topic.new_record? ?  t( 'create') : t('update')}"

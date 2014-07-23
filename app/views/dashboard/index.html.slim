@@ -12,13 +12,14 @@
       i.icon-plus
       |  New Group
   ul#my-groups-list.thumbnails
+    = render current_user.groups
 
   .page-header#all-groups-header
     = image_tag "icons/earth.png", class: 'icon-earth'
     span.title All Groups
 
   ul#all-groups-list.thumbnails
-    = render Group.all
+    = render Group.all.to_a -  current_user.groups.to_a
 
 = render template: 'groups/new'
 

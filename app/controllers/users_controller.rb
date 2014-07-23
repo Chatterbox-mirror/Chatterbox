@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    respond_with @user
   end
 
   def show

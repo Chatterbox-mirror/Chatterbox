@@ -1,1 +1,2 @@
-$('#group-li-<%=@group.id%>').replaceWith("<%=j render(@group)%>");
+$('#group-li-<%=@group.id%>').remove();
+$('#all-groups-list').append("<%=j render(@group)%>");

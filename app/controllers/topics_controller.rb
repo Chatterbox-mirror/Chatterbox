@@ -29,6 +29,7 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = scope.new(topic_params)
+    @topic.owner_id = current_user.id
     @topic.save
     respond_with @topic, location: [@group, @topic]
     # respond_with @topic

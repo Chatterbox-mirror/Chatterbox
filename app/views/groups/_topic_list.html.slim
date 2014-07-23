@@ -2,4 +2,4 @@
   li class=="#{"active" if @topic == topic}"
     = link_to [@group, topic] do
       i.icon-topic
-      = topic.title
+      span class="topic-title-#{topic.id}" = topic.title

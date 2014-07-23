@@ -77,6 +77,7 @@ class GroupsController < ApplicationController
 
   def join
     @group.members << current_user
+    redirect_to @group
   end
 
   def quit

@@ -3,10 +3,10 @@
     <span class="topic-title-<%= @topic.id %>">
       <%= @topic.title %>
     </span>
-    <% if false %>
+    <% if @topic.owner_id == current_user.id %>
       <button id="topic-delete-btn" class="btn btn-danger pull-right" type="button" data-id="<%= @topic.id %>">
         <i class="icon-trash"></i>
-        Delete
+        Close
       </button>
       <button id="topic-edit-btn" class="btn pull-right" type="button">
         <i class="icon-cog"></i>
@@ -18,8 +18,7 @@
   <ul id="comments">
     <%= render @topic.comments %>
   </ul>
-
-  <%= form_for [@group, @topic, @topic.comments.new], remote: true, html: {id: 'comment-new-form'} do |f| %>
+<%= form_for [@group, @topic, @topic.comments.new], remote: true, html: {id: 'comment-new-form'} do |f| %>
     <div class="form-fields">
       <%= f.text_area :content, id: "comment-content", class: "js-editor" %>
     </div>
@@ -38,20 +37,26 @@
       </button>
     </div>
   <% end %>
-<%= render 'markdown' %>
-<script type="text/javascript">
-$('#comments').scrollTo('100%');
-$('#comment-content').focus();
-$('#comments').timeago();
-window.pullComments = Puller("<%= url_for([@group, @topic, :comments])%>");
+<% content_for :footer do %>
+  <%= render 'form', topic: @topic %>
 
-(function(){
+  <%= render 'markdown' %>
+  <script type="text/javascript">
+  $('#comments').scrollTo('100%');
+  $('#comment-content').focus();
+  $('#comments').timeago();
+  window.pullComments = Puller("<%= url_for([@group, @topic, :comments])%>");
+  $('#topic-edit-btn').click(function(){
+    $('#topic-edit-modal').modal('show')
+  });
+  (function(){
+    var timer = setInterval(window.pullComments, 5000)
+    $(document).bind('page:before-change', function(){
+      clearInterval(timer);
+    })
+  })();
+        $('.js-editor').markDownEditor()
+        $('.js-editor').autosize()
+  </script>
+<% end %>
 
-  var timer = setInterval(window.pullComments, 5000)
-  $(document).bind('page:before-change', function(){
-    clearInterval(timer);
-  })
-})();
-      $('.js-editor').markDownEditor()
-      $('.js-editor').autosize()
-</script>

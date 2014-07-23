@@ -34,3 +34,4 @@ html lang="en"
 
         .container-fluid#container
           == content_for?(:content) ? yield(:content) : yield
+    == yield :footer
