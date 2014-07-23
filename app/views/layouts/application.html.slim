@@ -23,7 +23,7 @@ html lang="en"
                 ul.nav
                   li
                     a.avatar-link href="#"
-                      img.logo.img-circle alt="avatar" width="32" height="32" src=="<%= current_user.avatar %>"
+                      img.logo.img-circle alt="avatar" width="32" height="32" src==current_user.avatar_or_gravatar
                   li
                     a#usermenu.username.dropdown-toggle href="#" data-toggle="dropdown"
                       ' #{current_user.try :name}
