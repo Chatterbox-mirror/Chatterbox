@@ -13,4 +13,12 @@ class User < ActiveRecord::Base
   #   self.where("name = ?", conditions[:email]).limit(1).first ||
   #   self.where("email = ?", conditions[:email]).limit(1).first
   # end
+
+	def avatar_or_gravatar
+		self.avatar? ? self.avatar : self.gravatar
+	end
+
+	def gravatar
+		"https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}.png?s=64"
+	end
 end
