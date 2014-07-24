@@ -1,0 +1,5 @@
+if($("#group-edit-form-<%=@group.id%>").size() == 0){
+	$("body").append('<%= j render("form")%>');
+}
+$("#group-edit-modal-<%= @group.id %>").modal('show');
+

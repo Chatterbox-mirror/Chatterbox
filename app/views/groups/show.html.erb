@@ -1,0 +1,5 @@
+<% if @group.topics.size > 0 %>
+<script>
+  $('.chat-box').load("<%=group_topic_path(@group, @group.topics.first)%>")
+</script>
+<% end %>

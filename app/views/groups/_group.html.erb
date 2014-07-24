@@ -5,7 +5,7 @@
         <img class="logo img-circle img-polaroid group-logo-64-<%= group.id %>" alt="default avatar" src="<%= group.icon %>" width="64" height="64" />
         <div class="intro">
           <h4>
-            <% if(relationship == "stranger") %>
+            <% unless group.has_member?(current_user) %>
               <%= link_to group.name, group %>
             <% else  %>
               <a class="name group-name-<%= group.id %>" href="/groups/<%= group.id %>">
@@ -16,17 +16,18 @@
           <p class="members-count">
             <%= group.member_count %> members
           </p>
-          <% if(relationship == "owner") %>
-            <a class="actions group-edit-btn" data-group-id="<%= group.id %>">
+          <% if group.owner == current_user %>
+            <%= link_to edit_group_path(group), class: "actions group-edit-btn", remote: true do %>
               <i class="icon-cog"></i>
               Settings
-            </a>
+            <% end %>
           <% end %>
-          <% if group.has_member?(current_user) %>
+          <% if group.has_member?(current_user)%>
+
 <%= link_to quit_group_path(group), method: 'post', remote: true, class: 'actions group-quit-btn' do %>
   <i class="icon-signout"></i>
   Quit
-<% end %>
+<% end unless group.owner == current_user %>
           <% else %>
 
 <%= link_to join_group_path(group), method: 'post', remote: true, class: 'actions group-join-btn' do %>
