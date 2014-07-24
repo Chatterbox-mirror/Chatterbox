@@ -263,6 +263,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     redcarpet (3.0.0)
+    remotipart (1.2.1)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec (3.0.0)
@@ -398,6 +399,7 @@ DEPENDENCIES
   rb-fsevent
   rb-inotify
   redcarpet
+  remotipart
   responders
   rspec-rails
   ruby_gntp

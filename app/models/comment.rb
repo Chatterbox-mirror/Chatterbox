@@ -4,6 +4,7 @@ class Comment < ActiveRecord::Base
   belongs_to :topic
   scope :after, -> (start) { where("id > ?", start) }
   scope :before, -> (e) { where("id < ?", e) }
+  scope :archive, -> { where(status: 'closed') }
   validates :content, presence: true
 
 

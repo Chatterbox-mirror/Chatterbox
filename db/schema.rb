@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140722073707) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
+    t.text     "description"
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"

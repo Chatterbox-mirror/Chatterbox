@@ -16,6 +16,7 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require turbolinks.redirect
+//= require jquery.remotipart
 //= require vendor/bootstrap
 //= require vendor/markdown
 //= require_tree ./vendor/jquery
