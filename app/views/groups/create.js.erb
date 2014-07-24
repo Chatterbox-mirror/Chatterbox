@@ -1,4 +1,4 @@
 <% if @group.persisted? %>
 $('#group-new-modal').modal('hide');
-$('#all-groups-list').prepend('<%= j render(@group) %>');
+$('#my-groups-list').prepend('<%= j render(@group) %>');
 <% end %>
