@@ -9,13 +9,13 @@
           p=="#{@group.members.count} members"
       .members-online-count
         i.icon-lightbulb
-        span#members-online-count 0
+        span#members-online-count=@group.members.online.count
         |  members online
         b.arrow-down
       ul.thumbnails.member-list
         - if @group
           - @group.members.each do |user|
-            li.offline
+            li class="#{user.online? ? 'online' : 'offline'}"
               img.img-circle alt="avatar" width="32" height="32" src==user.avatar_or_gravatar
               b.session-state
               = user.name

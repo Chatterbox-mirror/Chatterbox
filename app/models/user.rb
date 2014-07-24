@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_and_belongs_to_many :groups
   mount_uploader :avatar
-  scope :online, -> { where(online: true) }
+  scope :online, -> { where('last_requested_at >= ?', 5.minutes.ago) }
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
 
@@ -18,7 +18,17 @@ class User < ActiveRecord::Base
 		self.avatar? ? self.avatar : self.gravatar
 	end
 
+  def online?
+    l = last_requested_at
+    l && l >= 5.minutes.ago
+  end
+
 	def gravatar
 		"https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}.png?s=64&d=identicon&r=PG&f=1"
 	end
+
+  def after_database_authentication
+    self.last_requested_at = Time.now
+    save
+  end
 end
