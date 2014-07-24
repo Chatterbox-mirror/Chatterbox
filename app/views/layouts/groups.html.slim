@@ -2,7 +2,7 @@
   #topic-view.view data-group-id=="#{@group.try(:id)}"
     .users
       .group-info
-        = image_tag 'group/larger_default.png', class: 'logo img-circle img-polaroid', size: '64x64', alt: 'group logo'
+        = image_tag @group.icon.url, class: 'logo img-circle img-polaroid', size: '64x64', alt: 'group logo'
         .intro
           h4= @group.try(:name)
 
