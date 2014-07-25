@@ -1,5 +1,18 @@
-- topic_list.each do |topic|
-  li class=="#{"active" if active_topic == topic}"
-    = link_to [@group, topic] do
-      i.icon-topic
-      span class="topic-title-#{topic.id}" = topic.title
+ruby:
+  if @topic && @topic.closed?
+    topic_list = @group.topics.closed
+    status = 'closed'
+  else
+    topic_list = @group.topics.open
+    status = 'open'
+  end
+h4.muted style="float: left" Topics:
+
+ul#topic-list-nav.nav.nav-pills
+  li#topic-list-open data-status='open' class="#{status == 'open' && 'active'}"
+    = link_to '活跃', open_group_topics_path(@group, id: @topic.try(:id)), remote: true
+  li#topic-list-closed data-status='closed' class="#{status == 'closed' && 'active'}"
+    = link_to '存档', closed_group_topics_path(@group, id: @topic.try(:id)), remote: true
+
+ul.topic-list
+  = render 'topics/topic_list', topic_list: topic_list, active_topic: @topic

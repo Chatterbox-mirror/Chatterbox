@@ -10,4 +10,8 @@ class Topic < ActiveRecord::Base
   def close!
     self.status = 'closed'
   end
+
+  def closed?
+    status == 'closed'
+  end
 end

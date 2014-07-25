@@ -26,16 +26,7 @@
         | New Topic
 
       hr
-
-      h4.muted style="float: left" Topics:
-      ul#topic-list-nav.nav.nav-pills
-        li#topic-list-open.active data-status='open'
-          = link_to '活跃', open_group_topics_path(@group, id: @topic.try(:id)), remote: true
-        li#topic-list-closed data-status='closed'
-          = link_to '存档', closed_group_topics_path(@group, id: @topic.try(:id)), remote: true
-      ul.topic-list
-        = render 'groups/topic_list', topic_list: @group.topics.open, active_topic: @topic
-
+      = render 'groups/topic_list'
     .chat-box
       == yield
   = render 'topics/form', topic: @group.topics.new
