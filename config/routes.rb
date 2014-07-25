@@ -1,7 +1,11 @@
 ChatterboxRails::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resource :current_user
+  resource :current_user do
+    member do
+      get :groups
+    end
+  end
   #
   devise_for :users
   resources :users

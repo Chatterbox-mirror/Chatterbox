@@ -4,4 +4,8 @@ class CurrentUsersController < ApplicationController
   def show
     respond_with current_user
   end
+
+  def groups
+    respond_with(@groups = current_user.groups)
+  end
 end
