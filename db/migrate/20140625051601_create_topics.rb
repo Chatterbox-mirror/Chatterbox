@@ -3,6 +3,7 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.string :title
       t.text :description
+      t.string :status, default: 'open'
       t.integer :group_id
       t.integer :owner_id
       t.timestamps

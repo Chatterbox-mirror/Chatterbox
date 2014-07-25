@@ -3,10 +3,12 @@ class TopicsController < ApplicationController
   before_action :find_group
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   layout 'groups'
+  has_scope :by_status, only: :index, default: 'open'
   # GET /topics
   # GET /topics.json
   def index
-    @topics = scope.all
+    @topics = apply_scopes(scope)
+    @topic = Topic.where(params[:id]).first if params[:id].present?
     respond_with @topics
   end
 

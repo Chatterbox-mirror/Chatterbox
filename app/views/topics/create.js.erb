@@ -1,7 +1,4 @@
 <% if @topic.persisted? %>
 $('#topic-new-modal').modal('hide');
 Turbolinks.visit("<%= url_for [@group, @topic] %>")
-
-// $('.topic-list').html("<%= j render('groups/topic_list')%>")
-// $('#topic_title').val('')
 <% end %>

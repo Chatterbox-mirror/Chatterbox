@@ -1,5 +1,5 @@
-- @group.topics.each do |topic|
-  li class=="#{"active" if @topic == topic}"
+- topic_list.each do |topic|
+  li class=="#{"active" if active_topic == topic}"
     = link_to [@group, topic] do
       i.icon-topic
       span class="topic-title-#{topic.id}" = topic.title

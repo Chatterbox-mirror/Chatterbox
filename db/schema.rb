@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20140722073707) do
   create_table "topics", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "status",      default: "open"
     t.integer  "group_id"
     t.integer  "owner_id"
     t.datetime "created_at"
