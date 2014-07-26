@@ -1,7 +1,9 @@
 class Topic < ActiveRecord::Base
   belongs_to :group
   has_many :comments
-  validates :title, presence: true
+
+  validates :title, :group_id, presence: true
+
   belongs_to :owner, class_name: 'User'
   scope :closed, -> { where status: 'closed'}
   scope :open, -> { where status: 'open' }
