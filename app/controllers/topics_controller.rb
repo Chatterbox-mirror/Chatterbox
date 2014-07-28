@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new]
+  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new, :close]
   before_action :find_group
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy, :close]
   layout 'groups'
   has_scope :by_status, only: :index, default: 'open'
   # GET /topics
@@ -25,6 +25,13 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
+  end
+
+  def close
+    if current_user == @topic.owner
+      @topic.close!
+      respond_with @topic, location: [@group, @topic]
+    end
   end
 
   # POST /topics

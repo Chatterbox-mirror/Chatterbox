@@ -11,6 +11,7 @@ class Topic < ActiveRecord::Base
 
   def close!
     self.status = 'closed'
+    save!
   end
 
   def closed?

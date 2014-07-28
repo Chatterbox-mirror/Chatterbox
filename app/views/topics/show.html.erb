@@ -4,10 +4,10 @@
       <%= @topic.title %>
     </span>
     <% if @topic.owner_id == current_user.id %>
-      <button id="topic-delete-btn" class="btn btn-danger pull-right" type="button" data-id="<%= @topic.id %>">
+      <%= link_to [:close, @group, @topic], method: :post, remote: true, confirm: 'Are you sure to close the topic?', class: "btn btn-danger pull-right", id: "topic-delete-btn", data: {id: @topic.id} do  %>
         <i class="icon-trash"></i>
         Close
-      </button>
+      <% end %>
       <button id="topic-edit-btn" class="btn pull-right" type="button">
         <i class="icon-cog"></i>
         Settings

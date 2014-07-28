@@ -20,6 +20,9 @@ ChatterboxRails::Application.routes.draw do
         get 'closed' => :index, :by_status => 'closed'
         get 'open' => :index, :by_status => 'open'
       end
+      member do
+        post :close
+      end
     end
     resources :members
   end
