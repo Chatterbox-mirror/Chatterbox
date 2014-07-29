@@ -49,6 +49,9 @@
   $('#topic-edit-btn').click(function(){
     $('#topic-edit-modal').modal('show')
   });
+  $('form#comment-new-form').bind('ajax:send', function(){
+    $('#comment-content').prop('disabled', true);
+  });
   (function(){
     var timer = setInterval(window.pullComments, 5000)
     $(document).bind('page:before-change', function(){
