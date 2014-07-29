@@ -13,12 +13,14 @@ window.Puller = (url) ->
       locking = false
 
 
-$(document).on 'keypress', 'textarea', (e) ->
+$(document).on 'keydown', 'textarea', (e) ->
     # ctrl + enter, newline
     # enter, invoke commentCreate function
-
-    if e.ctrlKey && e.which == 13 || e.which == 10
+    # console.log(e)
+    if (e.ctrlKey || e.metaKey) && e.which == 13 || e.which == 10
       # this.value += "\n"
     # else if e.which == 13 || e.which == 10
-      $(this.form).trigger('submit.rails')
+
+      $(this.form).trigger('submit.rails') if $.trim(this.value) != ''
+      # e.preventDefault()
       false

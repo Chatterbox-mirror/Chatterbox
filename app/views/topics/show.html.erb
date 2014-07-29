@@ -49,6 +49,12 @@
   $('#topic-edit-btn').click(function(){
     $('#topic-edit-modal').modal('show')
   });
+  $('form#comment-new-form').bind('ajax:before', function(){
+    if($.trim($('#comment-content').val()) == ''){
+      $('#comment-content').focus();
+      return false;
+    }
+  });
   $('form#comment-new-form').bind('ajax:send', function(){
     $('#comment-content').prop('disabled', true);
   });
