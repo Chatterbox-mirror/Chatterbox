@@ -7,7 +7,7 @@ window.Puller = (url) ->
       after: $('#comments').children().last().data('comment-id')
     }).done (data) ->
       $('#comments').append(data)
-      $('#comments').scrollTo('100%')
+      $('#comments').scrollTo('100%') if data.length > 0
       $('#comments').timeago('refresh')
     .always ->
       locking = false
