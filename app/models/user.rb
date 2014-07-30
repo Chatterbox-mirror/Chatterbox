@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   mount_uploader :avatar
   scope :online, -> { where('last_requested_at >= ?', 5.minutes.ago) }
   validates :email, presence: true, uniqueness: true
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: {
+    :case_sensitive => false
+  }
 
   # def self.find_for_database_authentication(conditions={})
   #   self.where("name = ?", conditions[:email]).limit(1).first ||
@@ -31,4 +33,14 @@ class User < ActiveRecord::Base
     self.last_requested_at = Time.now
     save
   end
+
+  def self.find_for_database_authentication(warden_conditions)
+     conditions = warden_conditions.dup
+     if login = conditions.delete(:email)
+       where(conditions).where(["lower(name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+       # where(conditions).where(name: login).first || where(conditions).where(email: login).first
+     else
+       where(conditions).first
+     end
+   end
 end

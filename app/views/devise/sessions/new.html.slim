@@ -1,0 +1,36 @@
+
+== image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
+
+.intro
+  .logo
+    = image_tag "logos/logo_index_03.png"
+  h4
+    | Online chatting service for hackers!
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name), id: 'sign-in-form') do |f|
+    input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
+    fieldset
+      .field.input-append
+        = f.text_field :email, autofocus: true, placeholder: t('index.login')
+
+        span.add-on
+          i.icon-user
+      .field.input-append
+        =f.password_field :password, autocomplete: "off", placeholder: t('password')
+        span.add-on
+          i.icon-key
+    .actions
+
+      input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value="#{t('sign_in')}"
+      == link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
+
+    .errors.alert.alert-error
+      i.icon-remove-sign
+      |  Invalid username or password
+
+.footer
+span.help
+  | About / Help
+span.powered.pull-right
+  | Powered by GitCafe
+

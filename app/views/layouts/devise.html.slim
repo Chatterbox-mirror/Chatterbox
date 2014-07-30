@@ -1,0 +1,22 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title ChatterBox
+
+    link href="/favicon.ico" rel="shortcut icon"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag 'application'
+  body
+    main id="main" role="main"
+      .home-box
+        .container
+          .clearfix
+            = yield
+          .footer
+            span.help
+              | About / Help
+            span.powered.pull-right
+              | Powered by GitCafe

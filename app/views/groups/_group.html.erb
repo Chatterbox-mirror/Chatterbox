@@ -8,9 +8,9 @@
             <% unless group.has_member?(current_user) %>
               <%= link_to group.name, group %>
             <% else  %>
-              <a class="name group-name-<%= group.id %>" href="/groups/<%= group.id %>">
+              <span class="name group-name-<%= group.id %>">
                 <%= group.name %>
-              </a>
+              </span>
             <% end %>
           </h4>
           <p class="members-count">
