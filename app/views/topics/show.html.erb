@@ -45,7 +45,7 @@
   $('#comments').scrollTo('100%');
   $('#comment-content').focus();
   $('#comments').timeago();
-  window.pullComments = Puller("<%= url_for([@group, @topic, :comments])%>");
+  window.pullComments = new Puller("<%= url_for([@group, @topic, :comments])%>", 5000);
   $('#topic-edit-btn').click(function(){
     $('#topic-edit-modal').modal('show')
   });
@@ -59,13 +59,13 @@
     $('#comment-content').prop('disabled', true);
   });
   (function(){
-    var timer = setInterval(window.pullComments, 5000)
+    pullComments.start();
     $(document).bind('page:before-change', function(){
-      clearInterval(timer);
+      pullComments.stop();
     })
   })();
-        $('.js-editor').markDownEditor()
-        $('.js-editor').autosize()
+  $('.js-editor').markDownEditor()
+  $('.js-editor').autosize()
   </script>
 <% end %>
 

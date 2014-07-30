@@ -1,8 +1,8 @@
 li data-comment-id="#{comment.id}"
   .comment-avatar
     - if comment.user
-      == link_to comment.user do
-        == image_tag comment.user.avatar_or_gravatar, class: 'img-circle'
+      = link_to comment.user do
+        = image_tag comment.user.avatar_or_gravatar, class: 'img-circle'
   .comment-detail
     .comment-info
       = link_to comment.author_name, comment.user

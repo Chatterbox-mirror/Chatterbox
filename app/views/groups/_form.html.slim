@@ -1,5 +1,5 @@
-== form_for(@group, html:{class: 'form-horizontal', id: "group-edit-form-#{@group.id}", multipart: true}, remote: true ) do |f|
-  .modal.hide.group-edit-modal id=="group-edit-modal-#{@group.id}"
+= form_for(@group, html:{class: 'form-horizontal', id: "group-edit-form-#{@group.id}", multipart: true}, remote: true ) do |f|
+  .modal.hide.group-edit-modal id="group-edit-modal-#{@group.id}"
     .modal-header
       button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
       h3

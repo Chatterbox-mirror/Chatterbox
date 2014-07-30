@@ -1,16 +1,31 @@
-window.Puller = (url) ->
-  locking = false
-
-  ->
-    locking = true
-    $.get(url, {
+class window.Puller
+  constructor: (@url, @period) ->
+    @locking = false
+    @running = false
+    @timer = null
+  start: ->
+    @running = true
+    @timer = setTimeout(( => @pull()), @period)
+  stop: ->
+    @running = false
+    clearTimeout @timer
+  pull: ->
+    return if @locking
+    @locking = true
+    $.get(@url, {
       after: $('#comments').children().last().data('comment-id')
     }).done (data) ->
       $('#comments').append(data)
       $('#comments').scrollTo('100%') if data.length > 0
       $('#comments').timeago('refresh')
-    .always ->
-      locking = false
+    .always =>
+      @locking = false
+      if @timer
+        clearTimeout(@timer)
+      if @running
+        @start()
+
+
 
 
 $(document).on 'keydown', 'textarea', (e) ->

@@ -6,7 +6,7 @@
         .intro
           h4= @group.try(:name)
 
-          p=="#{@group.members.count} members"
+          p="#{@group.members.count} members"
       .members-online-count
         i.icon-lightbulb
         span#members-online-count=@group.members.online.count
@@ -16,7 +16,7 @@
         - if @group
           - @group.members.each do |user|
             li class="#{user.online? ? 'online' : 'offline'}"
-              img.img-circle alt="avatar" width="32" height="32" src==user.avatar_or_gravatar
+              img.img-circle alt="avatar" width="32" height="32" src=user.avatar_or_gravatar
               b.session-state
               = user.name
 

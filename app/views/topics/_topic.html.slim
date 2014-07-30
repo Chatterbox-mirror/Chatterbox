@@ -1,4 +1,4 @@
 li class=="[%= css %]" id=="topic-li-#{topic.id}"
-  == link_to [topic.group, topic], class: "topic-title-#{topic.id}" do
+  = link_to [topic.group, topic], class: "topic-title-#{topic.id}" do
     i.icon-topic
     | #{topic.name}

@@ -14,7 +14,7 @@ html lang="en"
       .home-box
         .container
           .clearfix
-            == image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
+            = image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
 
             .intro
               .logo
@@ -36,7 +36,7 @@ html lang="en"
                 .actions
 
                   input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value="#{t('sign_in')}"
-                  == link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
+                  = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
 
                 .errors.alert.alert-error
                   i.icon-remove-sign
