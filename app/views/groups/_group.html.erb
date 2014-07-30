@@ -5,7 +5,7 @@
         <img class="logo img-circle img-polaroid group-logo-64-<%= group.id %>" alt="default avatar" src="<%= group.icon %>" width="64" height="64" />
         <div class="intro">
           <h4>
-            <% unless group.has_member?(current_user) %>
+            <% if group.has_member?(current_user) %>
               <%= link_to group.name, group %>
             <% else  %>
               <span class="name group-name-<%= group.id %>">
