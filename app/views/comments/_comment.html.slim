@@ -1,11 +1,11 @@
 li data-comment-id="#{comment.id}"
   .comment-avatar
     - if comment.user
-      = link_to comment.user do
-        = image_tag comment.user.avatar_or_gravatar, class: 'img-circle'
+      = image_tag comment.user.avatar_or_gravatar, class: 'img-circle'
+
   .comment-detail
     .comment-info
-      = link_to comment.author_name, comment.user
+      = comment.author_name
       time.muted.pull-right.timeago datetime=="#{comment.created_at.iso8601}"
        | #{comment.created_at}
     .comment-content

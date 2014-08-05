@@ -19,7 +19,9 @@
 //= require jquery.remotipart
 //= require vendor/bootstrap
 //= require vendor/markdown
-//= require_tree ./vendor/jquery
+//= require vendor/jquery/jquery.resize
+//= require vendor/jquery/jquery.scrollTo.min
+//= require vendor/jquery/jquery.iframe-transport
 //= require dashboard
 //= require vendor/timeago
 //= require vendor/locales/timeago.en
