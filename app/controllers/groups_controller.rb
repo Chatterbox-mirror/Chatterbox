@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new, :join, :quit]
+  before_action :authenticate_user!
   before_action :set_group, only: [:show, :edit, :update, :destroy, :join, :quit]
   has_scope :page, only: :index, allow_blank: true
   layout 'groups', except: [:index]

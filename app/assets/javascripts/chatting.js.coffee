@@ -9,7 +9,7 @@ class window.Puller
   stop: ->
     @running = false
     clearTimeout @timer
-  pull: ->
+  pull: (toAlert = true) ->
     return if @locking
     @locking = true
     $.get(@url, {
@@ -18,7 +18,7 @@ class window.Puller
       $('#comments').append(data)
       if data.length > 0
         $('#comments').scrollTo('100%')
-        window.alertSound.play() if window.alertSound
+        window.alertSound.play() if window.alertSound and toAlert
       $('#comments').timeago('refresh')
     .always =>
       @locking = false

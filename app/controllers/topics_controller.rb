@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new, :close]
+  before_action :authenticate_user!
   before_action :find_group
   before_action :set_topic, only: [:show, :edit, :update, :destroy, :close]
   layout 'groups'

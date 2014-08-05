@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy, :new]
+  before_action :authenticate_user!
   before_action :find_topic
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   has_scope :after, only: :index
