@@ -1,0 +1,15 @@
+.members-online-count
+  i.icon-lightbulb
+  span#members-online-count= @group.members.online.count
+  |  members online
+  b.arrow-down
+ul.thumbnails.member-list
+  - if @group
+    - @group.members.each do |user|
+      li class="#{user.online? ? 'online' : 'offline'}"
+        img.img-circle alt="avatar" width="24" height="24" src=user.avatar_or_gravatar
+        b.session-state
+        = user.name
+- content_for :footer do
+  coffee:
+    $('#members-online-count').text($('.member-list .online').size())
