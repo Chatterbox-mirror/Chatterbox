@@ -19,7 +19,10 @@ class ApplicationController < ActionController::Base
   end
   # before_filter :check_auth, if: -> { request.headers['Authorization'] }
 
-
+  before_filter :update_online, if: :user_signed_in?
+  def update_online
+    current_user.last_requested_at = Time.now
+  end
   # def check_auth
   #   authenticate_or_request_with_http_basic do |username,password|
   #     resource = User.find_by_email(username)

@@ -25,6 +25,15 @@ class User < ActiveRecord::Base
     l && l >= 5.minutes.ago
   end
 
+  def last_requested_at
+    Rails.cache.read("lastrequest:#{id}") #|| super
+  end
+
+  def last_requested_at=(time)
+    #super
+    Rails.cache.write("lastrequest:#{id}", time)
+  end
+
 	def gravatar
 		"https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}.png?s=64&d=identicon&r=PG&f=1"
 	end
