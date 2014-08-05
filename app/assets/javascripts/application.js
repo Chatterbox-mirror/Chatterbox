@@ -23,4 +23,19 @@
 //= require dashboard
 //= require vendor/timeago
 //= require vendor/locales/timeago.en
+//= require vendor/soundmanager2-nodebug-jsmin
 //= require chatting
+
+soundManager.setup({
+  onready: function() {
+    // $(document).bind('ready page:load', function(){
+      window.alertSound = soundManager.createSound({
+        id: 'alert',
+        url: '/assets/ding.mp3',
+        autoLoad: true,
+        autoPlay: false,
+        volume: 50
+      });
+    // })
+  }
+});

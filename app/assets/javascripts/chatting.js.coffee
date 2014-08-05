@@ -16,7 +16,9 @@ class window.Puller
       after: $('#comments').children().last().data('comment-id')
     }).done (data) ->
       $('#comments').append(data)
-      $('#comments').scrollTo('100%') if data.length > 0
+      if data.length > 0
+        $('#comments').scrollTo('100%')
+        window.alertSound.play() if window.alertSound
       $('#comments').timeago('refresh')
     .always =>
       @locking = false
