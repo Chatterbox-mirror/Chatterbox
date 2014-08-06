@@ -45,6 +45,10 @@
   $('#comments').scrollTo('100%');
   $('#comment-content').focus();
   $('#comments').timeago();
+  $('#comments').on('click', 'a', function(e){
+    window.open(this.href);
+    return false;
+  })
   window.pullComments = new Puller("<%= url_for([@group, @topic, :comments])%>", 5000);
   $('#topic-edit-btn').click(function(){
     $('#topic-edit-modal').modal('show')
