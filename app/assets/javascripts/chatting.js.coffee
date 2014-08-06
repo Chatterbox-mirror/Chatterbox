@@ -3,22 +3,37 @@ class window.Puller
     @locking = false
     @running = false
     @timer = null
+    @unread = 0
+    @originalTitle = document.title
+
   start: ->
     @running = true
     @timer = setTimeout(( => @pull()), @period)
   stop: ->
     @running = false
     clearTimeout @timer
+  updateTitle: (nodes) ->
+    if nodes
+      @unread += nodes.length
+    if window.focused
+      @unread = 0
+    if @unread == 0
+      document.title = @originalTitle
+    else
+      document.title = "(#{@unread}) #{@originalTitle}"
+
   pull: (toAlert = true) ->
     return if @locking
     @locking = true
     $.get(@url, {
       after: $('#comments').children().last().data('comment-id')
-    }).done (data) ->
-      $('#comments').append(data)
+    }).done (data) =>
+      nodes = $(data)
+      $('#comments').append(nodes)
       if data.length > 0
         $('#comments').scrollTo('100%')
         window.alertSound.play() if window.alertSound and toAlert
+        @updateTitle(nodes)
       $('#comments').timeago('refresh')
     .always =>
       @locking = false

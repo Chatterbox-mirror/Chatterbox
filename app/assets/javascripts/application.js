@@ -42,3 +42,10 @@ soundManager.setup({
     // })
   }
 });
+window.focused = true;
+window.onfocus = function(){
+  window.focused = true;
+}
+window.onblur = function(){
+  window.focused = false;
+}
