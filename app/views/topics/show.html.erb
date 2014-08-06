@@ -64,7 +64,8 @@
       pullComments.stop();
     })
   })();
-  $('.js-editor').markDownEditor()
+  $('.js-editor').markDownEditor();
+  $('.js-editor').atwho({at: '@', data: <%= raw @group.members.collect(&:name).to_json %> });
   //$('.js-editor').autosize()
   </script>
 <% end %>

@@ -27,6 +27,7 @@
 //= require vendor/locales/timeago.en
 //= require vendor/soundmanager2-nodebug-jsmin
 //= require chatting
+//= require jquery.atwho/index
 
 soundManager.setup({
   onready: function() {

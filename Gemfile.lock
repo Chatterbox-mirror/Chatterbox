@@ -178,6 +178,7 @@ GEM
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
+    jquery-atwho-rails (0.4.11)
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -266,6 +267,8 @@ GEM
     remotipart (1.2.1)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -382,6 +385,7 @@ DEPENDENCIES
   guard-rspec
   has_scope
   jbuilder (~> 1.2)
+  jquery-atwho-rails
   jquery-rails
   kaminari
   launchy
@@ -401,6 +405,7 @@ DEPENDENCIES
   redcarpet
   remotipart
   responders
+  rest-client
   rspec-rails
   ruby_gntp
   sass-rails (~> 4.0.2)
