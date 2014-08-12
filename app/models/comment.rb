@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
   scope :after, -> (start) { where("id > ?", start) }
   scope :before, -> (e) { where("id < ?", e) }
   scope :archive, -> { where(status: 'closed') }
-  validates :content, presence: true
+  # validates :content, presence: true
 
 
   def author_name

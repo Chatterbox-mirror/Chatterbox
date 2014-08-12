@@ -16,7 +16,7 @@
   </div>
 
   <ul id="comments">
-    <%= render @topic.comments %>
+    <%= render partial: 'comments/comment', collection: @topic.comments %>
   </ul>
 <%= form_for [@group, @topic, @topic.comments.new], remote: true, html: {id: 'comment-new-form'} do |f| %>
     <div class="form-fields">
