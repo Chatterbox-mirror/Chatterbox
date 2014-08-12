@@ -15,6 +15,18 @@ class Comment < ActiveRecord::Base
   def html_content
     markdown(content)
   end
+  
+  class << self
+    def new_with_cast(*a, &b)
+      if (h = a.first).is_a? Hash and (type = h.delete(:type) || h.delete('type')) and (klass = type.constantize) != self
+        raise "wtF hax!!"  unless klass < self  # klass should be a descendant of us
+        return klass.new(*a, &b)
+      end
+      new_without_cast(*a, &b)
+    end
+
+    alias_method_chain :new, :cast
+  end
 protected
     def convert_content
       self.content_html = markdown(content)
