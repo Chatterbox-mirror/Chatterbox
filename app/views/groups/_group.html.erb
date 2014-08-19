@@ -2,7 +2,7 @@
   <li id="group-li-<%= group.id %>">
     <div class="group">
       <div class="info">
-        <img class="logo img-circle img-polaroid group-logo-64-<%= group.id %>" alt="default avatar" src="<%= group.icon %>" width="64" height="64" />
+        <img class="logo img-circle img-polaroid group-logo-64-<%= group.id %>" alt="default avatar" src="<%= group.icon.thumb %>" width="64" height="64" />
         <div class="intro">
           <h4>
             <% if group.has_member?(current_user) %>
