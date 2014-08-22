@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
   scope :before, -> (e) { where("id < ?", e) }
   scope :archive, -> { where(status: 'closed') }
   # validates :content, presence: true
-
+  before_save :filter_keywords
 
   def author_name
     user.try( :name) || "Guest"
@@ -15,7 +15,7 @@ class Comment < ActiveRecord::Base
   def html_content
     markdown(content)
   end
-  
+
   class << self
     def new_with_cast(*a, &b)
       if (h = a.first).is_a? Hash and (type = h.delete(:type) || h.delete('type')) and (klass = type.constantize) != self
@@ -28,6 +28,7 @@ class Comment < ActiveRecord::Base
     alias_method_chain :new, :cast
   end
 protected
+
     def convert_content
       self.content_html = markdown(content)
     end
@@ -46,5 +47,8 @@ protected
       ).render(text)
 
       close_tags "<div class='markdown'>#{html}</div>"
+    end
+    def filter_keywords
+      self.content = Keyword.filter content
     end
 end
