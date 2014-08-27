@@ -12,9 +12,13 @@
                 <%= group.name %>
               </span>
             <% end %>
+            <sub><%= group.owner.name rescue nil %></sub>
           </h4>
           <p class="members-count">
             <%= group.member_count %> members
+            |
+            <%= group.topics.count %> topics
+
           </p>
           <% if group.owner == current_user %>
             <%= link_to edit_group_path(group), class: "actions group-edit-btn", remote: true do %>
