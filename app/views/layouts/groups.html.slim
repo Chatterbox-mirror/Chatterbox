@@ -5,8 +5,10 @@
         = image_tag @group.icon.url, class: 'logo img-circle img-polaroid', size: '64x64', alt: 'group logo'
         .intro
           h4= @group.try(:name)
-
-          p="#{@group.members.count} members"
+          p= @group.owner.name
+          p
+            span.members-count= @group.members.count
+            =" members"
       = render 'groups/member_list'
 
     .topics
