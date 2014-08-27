@@ -14,8 +14,8 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    @user = User.find params[:user][:id]
-    @group.member_ids.delete @user.id
+    @user = User.find params[:id]
+    @group.members.delete @user
   end
 
   private

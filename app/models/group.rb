@@ -7,7 +7,7 @@ class Group < ActiveRecord::Base
   mount_uploader :icon, IconUploader
 
   def member_count
-    0
+    members.count
   end
 
   def description
@@ -18,6 +18,13 @@ class Group < ActiveRecord::Base
     members.include?(user)
   end
   after_create :set_owner_membership
+    end
+  end
+
+  def transfer(member)
+    if members.include?(member)
+      self.owner = member
+      save!
   private
   def set_owner_membership
     members << owner unless members.include?(owner)

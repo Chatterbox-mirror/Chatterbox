@@ -6,10 +6,12 @@
 ul.thumbnails.member-list
   - if @group
     - @group.members.each do |user|
-      li class="#{user.online? ? 'online' : 'offline'}"
+      li class="#{user.online? ? 'online' : 'offline'}" id="user-#{user.id}"
         img.img-circle alt="avatar" width="24" height="24" src=user.avatar_or_gravatar
         b.session-state
         = user.name
+        - if @group.owner == current_user && user != @group.owner
+          = link_to 'X', group_member_path(@group, user), method: 'delete', remote: true, data: {confirm: 'Are you sure?'}
 - content_for :footer do
   coffee:
     $('#members-online-count').text($('.member-list .online').size())
