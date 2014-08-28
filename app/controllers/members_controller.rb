@@ -16,6 +16,11 @@ class MembersController < ApplicationController
   def destroy
     @user = User.find params[:id]
     @group.members.delete @user
+    n = Notification::EvictFromGroup.new
+    n.user = @user
+    n.group = @group
+    n.actor = @user
+    n.save
   end
 
   private

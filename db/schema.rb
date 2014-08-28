@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812071303) do
+ActiveRecord::Schema.define(version: 20140828031640) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -73,6 +73,17 @@ ActiveRecord::Schema.define(version: 20140812071303) do
   end
 
   add_index "groups_users", ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id", unique: true
+
+  create_table "notifications", force: true do |t|
+    t.string   "type"
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["user_id", "group_id", "type"], name: "index_notifications_on_user_id_and_group_id_and_type"
 
   create_table "topics", force: true do |t|
     t.string   "title"
