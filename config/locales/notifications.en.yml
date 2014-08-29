@@ -1,0 +1,6 @@
+en:
+  notifications:
+    evict_from_group: "%{operator} evicted %{actor} from %{group}"
+    join_group: "%{actor} joined %{group}"
+    quit_group: "%{actor} quited %{group}"
+    you: you

@@ -3,6 +3,7 @@
     | New Notifications
     b.arrow-down
   ul#notice-list
+    = render partial: 'notifications/notification', collection: @notifications
 
 .groups
   .page-header#my-groups-header
