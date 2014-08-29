@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140828031640) do
     t.string   "type"
     t.integer  "user_id"
     t.integer  "group_id"
+    t.integer  "actor_id"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
