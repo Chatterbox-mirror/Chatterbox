@@ -9,16 +9,20 @@ html lang="en"
     link href="/favicon.ico" rel="shortcut icon"
     = stylesheet_link_tag "application"
     = javascript_include_tag 'application'
+    link href='/front_end/css/index.css' rel='stylesheet'
+
   body
     main id="main" role="main"
       .home-box
         .container
           .clearfix
-            = image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
+            = image_tag 'http://placehold.it/550x450', class: 'img-polaroid', id: 'chatterbox-example'
 
             .intro
               .logo
-                = image_tag "logos/logo_index_03.png"
+                // = image_tag "logos/logo_index_03.png"
+                h1 
+                  b CHATTERBOX
               h4
                 | 0NL1N3 (H4771NG 53RV1(3 F0R HA(K3R5!
 
