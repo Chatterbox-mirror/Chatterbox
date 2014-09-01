@@ -1,0 +1,18 @@
+body{
+  font-family:Ubuntu;
+}
+h1{
+  color:lime;
+  text-align:center;
+}
+.home-box .intro h4{
+  font-size:16px;
+  text-align:center;
+  color:lime;
+}
+.btn.btn-large:last-child{
+  background:red;
+}
+.btn.btn-large:last-child:hover{
+  background:rgb(180,70,0);
+}
