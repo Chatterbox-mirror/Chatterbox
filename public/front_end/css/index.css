@@ -2,9 +2,18 @@ body{
   font-family:Ubuntu;
 }
 h1{
-  color:lime;
-  text-align:center;
+  color:black;
+  text-align:left;
+  margin:0;
+  padding-top:150px;
+  font-size:120px;
+  text-indent:40px;
 }
+h2{
+  text-indent:60px;
+  margin-top:50px;
+}
+/*
 .home-box .intro h4{
   font-size:16px;
   text-align:center;
@@ -15,14 +24,26 @@ h1{
 }
 .btn.btn-large:last-child:hover{
   background:rgb(180,70,0);
-}
+}*/
 #page1{
   background-image:url(/front_end/source/chat01.jpg);
   background-repeat:no-repeat;
   background-size:100%;
 }
 #white-filter{
-  background:rgba(255,255,255,0.7);
-  width:100%;
-  height:100%;
+  background:rgba(255,255,255,0.8);
+  position:absolute;
+  width:50%;
+  height:40%;
+  top:25%;
+  left:25%;
+  border-radius:20px;
+}
+#more{
+  position:absolute;
+  top:75%;
+  left:42%;
+  width:15%;
+  font-size:25px;
+  font-weight:bold;
 }
