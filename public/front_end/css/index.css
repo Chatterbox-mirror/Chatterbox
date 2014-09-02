@@ -16,3 +16,8 @@ h1{
 .btn.btn-large:last-child:hover{
   background:rgb(180,70,0);
 }
+#page1{
+  background-image:url(/front_end/source/chat01.jpg);
+  background-repeat:no-repeat;
+  background-size:100%;
+}
