@@ -9,7 +9,11 @@ html lang="en"
     link href="/favicon.ico" rel="shortcut icon"
     = stylesheet_link_tag "application"
     = javascript_include_tag 'application'
+    link href='/front_end/css/index.css' rel='stylesheet'
+    script src='/front_end/js/index.js'
+
   body
+<<<<<<< HEAD
 /    main id="main" role="main"
 /      .home-box
 /        .container
@@ -21,6 +25,21 @@ html lang="en"
 /                = image_tag "logos/logo_index_03.png"
 /              h4
 /                | Online chatting service for hackers!
+=======
+    main id="main" role="main"
+      .home-box
+        .container
+          .clearfix
+            = image_tag 'http://placehold.it/550x450', class: 'img-polaroid', id: 'chatterbox-example'
+
+            .intro
+              .logo
+                // = image_tag "logos/logo_index_03.png"
+                h1 
+                  b CHATTERBOX
+              h4
+                | 0NL1N3 (H4771NG 53RV1(3 F0R HA(K3R5!
+>>>>>>> 162c1debcbcedb7a77b95bc0c1ecbef0de7b4428
 
 /             form#sign-in-form action="/users/sign_in" method="post"
 /                input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
