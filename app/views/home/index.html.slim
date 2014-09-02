@@ -10,40 +10,40 @@ html lang="en"
     = stylesheet_link_tag "application"
     = javascript_include_tag 'application'
   body
-    main id="main" role="main"
-      .home-box
-        .container
-          .clearfix
-            = image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
+/    main id="main" role="main"
+/      .home-box
+/        .container
+/          .clearfix
+/            = image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
 
-            .intro
-              .logo
-                = image_tag "logos/logo_index_03.png"
-              h4
-                | Online chatting service for hackers!
+/            .intro
+/              .logo
+/                = image_tag "logos/logo_index_03.png"
+/              h4
+/                | Online chatting service for hackers!
 
-              form#sign-in-form action="/users/sign_in" method="post"
-                input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
-                fieldset
-                  .field.input-append
-                    input autofocus="autofocus" id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
-                    span.add-on
-                      i.icon-user
-                  .field.input-append
-                    input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
-                    span.add-on
-                      i.icon-key
-                .actions
+/             form#sign-in-form action="/users/sign_in" method="post"
+/                input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
+/                fieldset
+/                  .field.input-append
+/                    input autofocus="autofocus" id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
+/                    span.add-on
+/                      i.icon-user
+/                  .field.input-append
+/                    input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
+/                    span.add-on
+/                      i.icon-key
+/                .actions
 
-                  input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value="#{t('sign_in')}"
-                  = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
+/                  input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value="#{t('sign_in')}"
+/                  = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
 
-                .errors.alert.alert-error
-                  i.icon-remove-sign
-                  |  Invalid username or password
+/                .errors.alert.alert-error
+/                  i.icon-remove-sign
+/                  |  Invalid username or password
 
-          .footer
-            span.help
-              | About / Help
-            span.powered.pull-right
-              | Powered by GitCafe
+/          .footer
+/            span.help
+/              | About / Help
+/            span.powered.pull-right
+/              | Powered by GitCafe
