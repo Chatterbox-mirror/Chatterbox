@@ -2,6 +2,8 @@
 source 'https://rubygems.org'
 #source 'http://ruby.taobao.org'
 
+gem 'font-awesome-less'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 gem 'devise'
