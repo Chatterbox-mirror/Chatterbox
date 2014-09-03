@@ -9,7 +9,9 @@ html lang="en"
     link href="/favicon.ico" rel="shortcut icon"
     = stylesheet_link_tag "application"
     = javascript_include_tag 'application'
+    link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'
     link href='/front_end/css/index.css' rel='stylesheet'
+    link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"
     script src='/front_end/js/index.js'
 
   body
@@ -26,40 +28,27 @@ html lang="en"
     div id='page2' class='well'
 
     div id='page3' class='well'
-      div class='span5 offset5' id='sign-up-filter'
-        i class='fa fa-users' id='symbol-for-sign-up'
+      div class='span8 offset7' id='sign-up-filter'
+        i class='fa fa-users ' id='symbol-for-sign-up'
         a href='/users/sign_up' id='sign-up-button' 
           | 現在就馬上註冊
 
-      div class='span5 offset2' id='login-filter'
-
-/    main id="main" role="main"
-/      .home-box
-/        .container
-/          .clearfix
-/            = image_tag 'chatterbox.png', class: 'img-polaroid', id: 'chatterbox-example'
-
-/            .intro
-/              .logo
-/                = image_tag "logos/logo_index_03.png"
-/              h4
-/                | Online chatting service for hackers!
-/             form#sign-in-form action="/users/sign_in" method="post"
-/                input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
-/                fieldset
-/                  .field.input-append
-/                    input autofocus="autofocus" id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
-/                    span.add-on
-/                      i.icon-user
-/                  .field.input-append
-/                    input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
-/                    span.add-on
-/                      i.icon-key
-/                .actions
-
-/                  input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value="#{t('sign_in')}"
+        i class='fa fa-sign-in ' id='symbol-sign-in'
+        form#sign-in-form action="/users/sign_in" method="post"
+          input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
+            fieldset
+              .field.input-append
+                input autofocus="autofocus" id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
+                  span.add-on
+                    i.icon-user
+                  .field.input-append
+                    input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
+                    span.add-on
+                      i.icon-key
+                  .actions
+                    input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value='我已經有帳號' 
 /                  = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-large btn-block'
-
+/
 /                .errors.alert.alert-error
 /                  i.icon-remove-sign
 /                  |  Invalid username or password
