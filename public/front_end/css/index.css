@@ -100,3 +100,13 @@ fieldset{
   display:inherit;
   margin:1em 0 0.5em 0;
 }
+footer{
+  height:20%;
+  background:rgb(44, 62, 80);
+  color:white;
+}
+footer p{
+  padding-top:1.5em;
+  font-size:2em;
+  text-align:center;
+}
