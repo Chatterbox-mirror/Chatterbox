@@ -2,9 +2,6 @@ body{
   background:url(http://chat.gitcafe.com/assets/black_linen_v2-a635549376d4ec493364e305e3c3f580.png);
   font-family:ubuntu;
 }
-.dashboard{
-  color: rgb(239, 239, 239);
-}
 .navbar .navbar-inner{
   font-weight:bold;
   background-color:#f9f9f9;
@@ -33,6 +30,8 @@ body{
 .title{
   font-weight:bold;
   font-size:20px;
+  /*margin-bottom: 10px;*/
+  padding: 10px;
 }
 .page-header{
   border-radius:2px;
@@ -45,7 +44,9 @@ body{
 .btn.btn-primary:hover{
   background:#DF5919;
 }
-
+.dashboard{
+  color: rgb(239, 239, 239);
+}
 .dashboard-catogories{
   text-align: center;
   padding: 1em;
@@ -69,6 +70,12 @@ body{
 .dashboard-list img{
   margin-right: .2em;
   vertical-align: top;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
 }
 .text-right{
   text-align: right;
