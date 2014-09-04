@@ -10,8 +10,14 @@ h1{
   text-indent:10%;
 }
 h2{
-  text-indent:10%;
-  margin-top:50px;
+  padding-top:1em;
+  text-align:center;
+}
+h3{
+  text-align:center;
+}
+h4{
+  text-align:center;
 }
 /*
 .home-box .intro h4{
@@ -49,6 +55,28 @@ h2{
 }
 .well{
   margin:0;
+}
+#page2{
+  background-image:url(/front_end/source/chat02.jpg);
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+#slogan{
+  background:rgba(255,255,255,0.8);
+  text-align: right;
+  border-radius:20px;
+  width:100%;
+  height:100%;
+  top:25%;
+  left:25%;
+}
+#pttclass{
+  background:rgba(255,255,255,0.8);
+  border-radius:20px;
+  width:100%;
+  height:50%;
+  top:25%;
+  left:25%;
 }
 #sign-up-filter{
   border:10px solid black;
