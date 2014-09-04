@@ -6,11 +6,11 @@ body{
   color: rgb(239, 239, 239);
 }
 .users {
-  border-left: 1px solid #474747;
+  border-left: none;
 }
 .topics{
   padding: 0;
-  border-right: 1px solid #474747;
+  border-right: none;
 }
 .topics-list{
   text-align: center;
@@ -81,8 +81,26 @@ body{
 #topic-view .users {
   position: absolute;
   right: 0;
+  height: auto;
 }
 .chat-box #comments li {
   border-bottom: 1px solid #1C1C1C;
 }
-/*x*/
+.chat-box #comment-new-form .form-actions {
+  border-bottom: none;
+}
+form {
+  margin: 0;
+}
+.users .members-online-count .arrow-down {
+  border-top:10px solid #666666;
+}
+.users .members-online-count{
+  background-color: #666666;
+}
+.btn, .btn:hover, .btn:focus, .btn-group:focus .btn.dropdown-toggle {
+  color: rgb(239, 239, 239);
+}
+.btn.btn-primary {
+  background-color: #1abc9c;
+}
