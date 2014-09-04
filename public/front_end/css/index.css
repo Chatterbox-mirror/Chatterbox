@@ -55,6 +55,8 @@ h4{
 }
 .well{
   margin:0;
+  border:0;
+  border-radius:0;
 }
 #page2{
   background-image:url(/front_end/source/chat02.jpg);
