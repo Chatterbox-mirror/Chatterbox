@@ -3,4 +3,5 @@ jQuery(function($){
   $('#more').click(function(){
     $('html , body').animate({scrollTop: $('#page2').offset().top} , 800);
   });
+
 });
