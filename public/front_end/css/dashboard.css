@@ -80,4 +80,6 @@ body{
 .text-right{
   text-align: right;
 }
-
+#search-input{
+  display:none;
+}

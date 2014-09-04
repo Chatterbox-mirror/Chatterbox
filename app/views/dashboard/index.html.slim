@@ -13,9 +13,12 @@
       .span6
         p.title Group List
       .span6.text-right
-          button.btn
+          button.btn id='Search-btn'
             i.fa.fa-search
             | Search
+          input id="search-input" type="text" placeholder="Search" 
+            style id="m-search"
+
           - unless @category.nil?
             button.btn#group-new-btn
               i.fa.fa-users
@@ -31,7 +34,7 @@
           td Members
           td Activity
       tbody
-        tr
+        tr 
           td
             img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
             | 5566 Fans Club
@@ -47,8 +50,6 @@
         = render @groups.to_a
 
 = render template: 'groups/new'
-
-
 coffee:
   $('#group-new-btn').click (e) ->
     $('#group-new-modal').modal('toggle')
