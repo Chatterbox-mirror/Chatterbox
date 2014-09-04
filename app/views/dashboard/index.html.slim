@@ -48,73 +48,10 @@
           td 55
           td 66
           td 5566 days ago
-        tr
-          td
-            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
-            | 5566 Fans Club
-          td
-            span
-              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
-              | sntc06
-          td Others
-          td 55
-          td 66
-          td 5566 days ago
-        tr
-          td
-            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
-            | 5566 Fans Club
-          td
-            span
-              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
-              | sntc06
-          td Others
-          td 55
-          td 66
-          td 5566 days ago
-        tr
-          td
-            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
-            | 5566 Fans Club
-          td
-            span
-              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
-              | sntc06
-          td Others
-          td 55
-          td 66
-          td 5566 days ago
-        tr
-          td
-            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
-            | 5566 Fans Club
-          td
-            span
-              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
-              | sntc06
-          td Others
-          td 55
-          td 66
-          td 5566 days ago
+        = render Group.all.to_a
 
-.modal.hide.fade#group-new-modal
-  .modal-header
-    button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-      | &times;
-    h3 Create Group
-  .modal-body
-    form.form-horizontal
-      .control-group
-        label.control-label for="inputName" Group Name
-        .controls
-          input#inputName type="text" placeholder="Name of group"
-      .control-group
-        label.control-label for="inputPassword" Description
-        .controls
-          textarea#inputDescription rows="5" placeholder="Description about your group."
-  .modal-footer
-    a.btn href="#" Close
-    a.btn href="#" style="background:rgb(22, 160, 133);" Create
+= render template: 'groups/new'
+
 
 coffee:
   $('#group-new-btn').click (e) ->

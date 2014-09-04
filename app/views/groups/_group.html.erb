@@ -1,49 +1,16 @@
-<% relationship = 'stranger' %>
-  <li id="group-li-<%= group.id %>">
-    <div class="group">
-      <div class="info">
-        <img class="logo img-circle img-polaroid group-logo-64-<%= group.id %>" alt="default avatar" src="<%= group.icon.thumb %>" width="64" height="64" />
-        <div class="intro">
-          <h4>
-            <% if group.has_member?(current_user) %>
-              <%= link_to group.name, group %>
-            <% else  %>
-              <span class="name group-name-<%= group.id %>">
-                <%= group.name %>
-              </span>
-            <% end %>
-            <sub><%= group.owner.name rescue nil %></sub>
-          </h4>
-          <p class="members-count">
-            <%= group.member_count %> members
-            |
-            <%= group.topics.count %> topics
-
-          </p>
-          <% if group.owner == current_user %>
-            <%= link_to edit_group_path(group), class: "actions group-edit-btn", remote: true do %>
-              <i class="icon-cog"></i>
-              Settings
-            <% end %>
-          <% end %>
-          <% if group.has_member?(current_user)%>
-
-<%= link_to quit_group_path(group), method: 'post', remote: true, class: 'actions group-quit-btn' do %>
-  <i class="icon-signout"></i>
-  Quit
-<% end unless group.owner == current_user %>
-          <% else %>
-
-<%= link_to join_group_path(group), method: 'post', remote: true, class: 'actions group-join-btn' do %>
-  <i class="icon-signin"></i>
-  Join
-<% end %>
-          <% end %>
-          <div class="unread-count"></div>
-        </div>
-      </div>
-      <div class="desc" id="group-desc-<%= group.id %>">
-        <%= group.description %>
-      </div>
-    </div>
-  </li>
+<tr>
+  <td>
+    <img class="img-rounded group-logo-64-<%= group.id %>" src="<%= group.icon.thumb %>" width="20" height="20" />
+    <%= link_to group.name, group %>
+  </td>
+  <td>
+    <span>
+      <img class="img-circle" src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20">
+      <%= group.owner.name rescue nil %>
+    </span>
+  </td>
+  <td><%= group.categories_id %></td>
+  <td><%= group.topics.count %></td>
+  <td><%= group.member_count %></td>
+  <td><%= group.updated_at %></td>
+</tr>
