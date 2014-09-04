@@ -23,15 +23,19 @@
           button.btn
             i.fa.fa-search
             | Search
-          button.btn#group-new-btn
+          -unless request.original_url.split('/')[4].nil?
+           button.btn#group-new-btn
             i.fa.fa-users
             | Create Group
+           end
     table.table
       thead
         tr
           td Group Name
           td Manager
-          td Category
+          -if request.original_url.split('/')[4].nil?
+            td Category
+          end
           td Topics
           td Members
           td Activity
