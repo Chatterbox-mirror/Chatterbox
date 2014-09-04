@@ -67,5 +67,14 @@
   $('.js-editor').markDownEditor();
   $('.js-editor').atwho({at: '@', data: <%= raw @group.members.collect(&:name).to_json %> });
   //$('.js-editor').autosize()
+  resize_comment = function(e) {
+    chat_box_height = $(".chat-box").height();
+    title_height = $(".chat-box .title").outerHeight(true);
+    form_height = $(".chat-box #comment-new-form").outerHeight(true);
+    $(".chat-box #comments").height(chat_box_height - title_height - form_height);
+	};
+  $(window).on('resize', resize_comment);
+	$(".chat-box #comment-new-form").on('resize', resize_comment);
+	$(resize_comment);
   </script>
 <% end %>
