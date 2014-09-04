@@ -32,16 +32,8 @@ html lang="en"
                      a#usermenu.username href='#'
                        ' #{current_user.try :name}
                   li  
-                    i class='fa fa-sign-out'
-                     =link_to t('登出') , destroy_user_session_path , id: 'sign-out-link' , method: 'delete'
-                  //li
-                    a#usermenu.username.dropdown-toggle href="#" data-toggle="dropdown"
-                      ' #{current_user.try :name}
-                      b.caret
-                    ul.dropdown-menu role="menu"  aria-labelledby="usermenu"
-                      li
-                        = link_to t('sign_out'), destroy_user_session_path, id: 'sign-out-link', method: 'delete'
-
+                     = link_to destroy_user_session_path , id: 'sign-out-link' , method: 'delete' do
+                       i class='fa fa-sign-out'
         .container-fluid#container
           == content_for?(:content) ? yield(:content) : yield
     == yield :footer

@@ -41,7 +41,7 @@ body{
   background:rgb(255,151,37);
   font-weight:bold;
 }
-.btn.btn-primary:hover{
+.btn.btn-primary:hover {
   background:#DF5919;
 }
 .dashboard{
@@ -54,7 +54,7 @@ body{
 .dashboard-catogories ul li a{
   color: rgb(239, 239, 239);
 }
-.dashboard-catogories ul li a:hover{
+.dashboard-catogories ul li a:hover {
   background-color: rgb(239, 239, 239);
   color: black
 }
@@ -79,8 +79,5 @@ body{
 }
 .text-right{
   text-align: right;
-}
-#navbar-user .username{
-  width:50px;
 }
 

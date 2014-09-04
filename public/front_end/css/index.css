@@ -97,7 +97,7 @@ h4{
   margin:1em 2.5em;
   text-align:center;
 }
-#sign-up-button:hover{
+#sign-up-button:hover {
   text-decoration:none;
 }
 #symbol-for-sign-up{
@@ -116,7 +116,7 @@ fieldset{
 .input-append input{
   margin-bottom:1em;
 }
-.input-append input:first-child{
+.input-append input:first-child {
   margin-left:1.5em;
 }
 #sign-in-submit{

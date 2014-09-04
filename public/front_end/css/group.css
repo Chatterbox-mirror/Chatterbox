@@ -16,15 +16,15 @@ body{
 .topics-list ul li a{
   color: rgb(239, 239, 239);
 }
-.topics-list ul li a:hover{
+.topics-list ul li a:hover {
   background-color: rgb(239, 239, 239);
   color: black
 }
-.topics-list ul li.active a:hover{
+.topics-list ul li.active a:hover {
   background-color: rgb(239, 239, 239);
   color: black
 }
-.topics-list ul li.active a:hover{
+.topics-list ul li.active a:hover {
   background-color: rgb(239, 239, 239);
   color: black
 }
@@ -64,6 +64,6 @@ body{
 #topic-new-btn:hover {
   color: #DF5919;
 }
-#topic-list-nav button a{
+#topic-list-nav button a {
   color: rgb(239, 239, 239);
 }
