@@ -1,32 +1,123 @@
-.notifications
-  .header
-    | New Notifications
-    b.arrow-down
-  ul#notice-list
-    = render partial: 'notifications/notification', collection: @notifications
+.row-fluid.dashboard
+  .span2.dashboard-catogories
+    span.title
+      | Category
+    ul.nav.nav-pills.nav-stacked
+      li
+        a All
+      li
+        a Gitcafe
+      li
+        a Programing
+      li
+        a Ruby
+      li
+        a Swift
+      li
+        a Others
+  .span10.dashboard-list
+    .row-fluid
+      .span6
+        span.title Group List
+      .span6.text-right
+          button.btn
+            i.fa.fa-search
+            | Search
+          button.btn#group-new-btn
+            i.fa.fa-users
+            | Create Group
+    table.table
+      thead
+        tr
+          td Group Name
+          td Manager
+          td Category
+          td Topics
+          td Members
+          td Activity
+      tbody
+        tr
+          td
+            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
+            | 5566 Fans Club
+          td
+            span
+              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
+              | sntc06
+          td Others
+          td 55
+          td 66
+          td 5566 days ago
+        tr
+          td
+            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
+            | 5566 Fans Club
+          td
+            span
+              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
+              | sntc06
+          td Others
+          td 55
+          td 66
+          td 5566 days ago
+        tr
+          td
+            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
+            | 5566 Fans Club
+          td
+            span
+              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
+              | sntc06
+          td Others
+          td 55
+          td 66
+          td 5566 days ago
+        tr
+          td
+            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
+            | 5566 Fans Club
+          td
+            span
+              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
+              | sntc06
+          td Others
+          td 55
+          td 66
+          td 5566 days ago
+        tr
+          td
+            img.img-rounded src="http://www.gravatar.com/avatar/f38a48af2f0b8000d3cd140da597017d.jpg?s=20"
+            | 5566 Fans Club
+          td
+            span
+              img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
+              | sntc06
+          td Others
+          td 55
+          td 66
+          td 5566 days ago
 
-.groups
-  .page-header#my-groups-header
-    i.icon-heart
-    span.title My Groups
-    = link_to new_group_path, id: 'group-new-btn', class: 'btn btn-primary' do
-      i.icon-plus
-      |  New Group
-  ul#my-groups-list.thumbnails
-    = render current_user.groups
-
-  .page-header#all-groups-header
-    = image_tag "icons/earth.png", class: 'icon-earth'
-    span.title All Groups
-
-  ul#all-groups-list.thumbnails
-    = render Group.all.to_a -  current_user.groups.to_a
-
-= render template: 'groups/new'
-
+.modal.hide.fade#group-new-modal
+  .modal-header
+    button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+      | &times;
+    h3 Create Group
+  .modal-body
+    form.form-horizontal
+      .control-group
+        label.control-label for="inputName" Group Name
+        .controls
+          input#inputName type="text" placeholder="Name of group"
+      .control-group
+        label.control-label for="inputPassword" Description
+        .controls
+          textarea#inputDescription rows="5" placeholder="Description about your group."
+  .modal-footer
+    a.btn href="#" Close
+    a.btn href="#" style="background:rgb(22, 160, 133);" Create
 
 coffee:
   $('#group-new-btn').click (e) ->
     $('#group-new-modal').modal('toggle')
     return false
-  $('.groups').on 'click', 'group-edit-btn', ->
+  $('.dashboard').on 'click', 'group-edit-btn', ->
