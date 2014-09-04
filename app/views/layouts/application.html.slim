@@ -27,8 +27,14 @@ html lang="en"
                   li
                     -  if user_signed_in?
                       a.avatar-link href="#"
-                         img.logo.img-circle alt="avatar" width="32" height="32" src==current_user.avatar_or_gravatar
+                        img.logo.img-circle alt="avatar" width="32" height="32" src==current_user.avatar_or_gravatar
                   li
+                     a#usermenu.username href='#'
+                       ' #{current_user.try :name}
+                  li  
+                    i class='fa fa-sign-out'
+                     =link_to t('登出') , destroy_user_session_path , id: 'sign-out-link' , method: 'delete'
+                  //li
                     a#usermenu.username.dropdown-toggle href="#" data-toggle="dropdown"
                       ' #{current_user.try :name}
                       b.caret

@@ -80,3 +80,7 @@ body{
 .text-right{
   text-align: right;
 }
+#navbar-user .username{
+  width:50px;
+}
+
