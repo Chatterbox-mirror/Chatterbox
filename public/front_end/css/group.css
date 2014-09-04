@@ -5,8 +5,12 @@ body{
 #topic-view{
   color: rgb(239, 239, 239);
 }
+.users {
+  border-left: 1px solid #474747;
+}
 .topics{
   padding: 0;
+  border-right: 1px solid #474747;
 }
 .topics-list{
   text-align: center;
@@ -67,3 +71,18 @@ body{
 #topic-list-nav button a {
   color: rgb(239, 239, 239);
 }
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6,
+.markdown p, .markdown span, .markdown li{
+  color: rgb(239, 239, 239);
+}
+.editor-preview {
+  background: rgba(150,150,150,0.1) !important;
+}
+#topic-view .users {
+  position: absolute;
+  right: 0;
+}
+.chat-box #comments li {
+  border-bottom: 1px solid #1C1C1C;
+}
+/*x*/
