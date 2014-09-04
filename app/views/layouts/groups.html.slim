@@ -12,17 +12,12 @@
       = render 'groups/member_list'
 
     .topics
-      button#topic-new-btn.btn.btn-primary
-        = image_tag "icons/new_topic.png", class: 'icon'
-        | New Topic
-
-      hr
       = render 'groups/topic_list'
     .chat-box
       == yield
   = render 'topics/form', topic: @group.topics.new
   coffee:
-    $('#topic-new-btn.btn').click ->
+    $('#topic-new-btn').click ->
       $('#topic-new-modal').modal('toggle')
 
 == render :file => 'layouts/application'

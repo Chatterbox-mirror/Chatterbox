@@ -1,3 +1,3 @@
-$('.topic-list').html("<%= j render( 'topic_list', topic_list: @topics, active_topic: @topic )%>");
-$('#topic-list-nav li.active').removeClass('active')
-$('#topic-list-nav li[data-status=<%= params[:by_status] %>]').addClass('active');
+$('.topics-list').html("<%= j render( 'topic_list', topic_list: @topics, active_topic: @topic )%>");
+$('#topic-list-nav button.active').removeClass('active')
+$('#topic-list-nav button[data-status=<%= params[:by_status] %>]').addClass('active');
