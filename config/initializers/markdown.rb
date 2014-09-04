@@ -11,5 +11,14 @@ module Redcarpet
         end
       end
     end
+    class HTMLwithPygmentsWithoutScriptTag < HTMLwithPygments
+      def block_html(raw_html)
+        raw_html.gsub(/<(\/?)script([^>]*)>/, '&lt;\1script\2&gt;')
+      end
+
+      def raw_html(raw_html)
+        raw_html.gsub(/<(\/?)script([^>]*)>/, '&lt;\1script\2&gt;')
+      end
+    end
   end
 end

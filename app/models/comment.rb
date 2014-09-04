@@ -38,7 +38,7 @@ protected
       doc.at(selector).to_html.html_safe
     end
   def markdown(text)
-      html = Redcarpet::Markdown.new(Redcarpet::Render::HTMLwithPygments,
+      html = Redcarpet::Markdown.new(Redcarpet::Render::HTMLwithPygmentsWithoutScriptTag,
         tables: true,
         fenced_code_blocks: true,
         autolink: true,
