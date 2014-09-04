@@ -50,11 +50,6 @@ ActiveRecord::Schema.define(version: 20140904093953) do
     t.string "name"
   end
 
-  create_table "categories_groups", force: true do |t|
-    t.integer "group_id"
-    t.integer "category_id"
-  end
-
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.integer  "topic_id"
@@ -72,7 +67,7 @@ ActiveRecord::Schema.define(version: 20140904093953) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "icon"
-    t.integer  "categories_id", limit: 255
+    t.integer  "category_id"
   end
 
   add_index "groups", ["owner_id"], name: "index_groups_on_owner_id"

@@ -9,7 +9,9 @@
       <%= group.owner.name rescue nil %>
     </span>
   </td>
-  <td><%= group.categories_id %></td>
+<% if @category.nil? %>
+	<td><%= group.category.name %></td>
+<% end %>
   <td><%= group.topics.count %></td>
   <td><%= group.member_count %></td>
   <td><%= group.updated_at %></td>

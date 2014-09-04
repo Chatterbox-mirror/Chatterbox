@@ -3,18 +3,11 @@
     span.title
       | Category
     ul.nav.nav-pills.nav-stacked
-      li
-        a All
-      li
-        a Gitcafe
-      li
-        a Programing
-      li
-        a Ruby
-      li
-        a Swift
-      li
-        a Others
+      li[class=(@category.nil? ? 'active' : '')]
+        = link_to "All", dashboard_path
+      - Category.all.map do |category|
+        li[class=(@category == category ? 'active' : '')]
+          = link_to category.name, categories_path + '/' + category.name
   .span10.dashboard-list
     .row-fluid
       .span6
@@ -23,19 +16,17 @@
           button.btn
             i.fa.fa-search
             | Search
-          -unless request.original_url.split('/')[4].nil?
-           button.btn#group-new-btn
-            i.fa.fa-users
-            | Create Group
-           end
+          - unless @category.nil?
+            button.btn#group-new-btn
+              i.fa.fa-users
+              | Create Group
     table.table
       thead
         tr
           td Group Name
           td Manager
-          -if request.original_url.split('/')[4].nil?
-            td Category
-          end
+          - if @category.nil?
+              td Category
           td Topics
           td Members
           td Activity
@@ -48,11 +39,12 @@
             span
               img.img-circle src="http://www.gravatar.com/avatar/dacaed17fc057f67d857ca65ec52ba8f.jpg?s=20"
               | sntc06
-          td Others
+          - if @category.nil?
+            td Others
           td 55
           td 66
           td 5566 days ago
-        = render Group.all.to_a
+        = render @groups.to_a
 
 = render template: 'groups/new'
 

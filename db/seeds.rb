@@ -8,3 +8,7 @@
 AdminUser.where(email: 'admin@example.com').destroy_all
 AdminUser.create email: 'chatterbox@gitcafe.com', password: 'chatterbox', password_confirmation: 'chatterbox'
 User.create name: 'Chatterbox', email: 'chatterbox@gitcafe.com', password: 'chatterbox', password_confirmation: 'chatterbox'
+Category.find_or_create_by name: 'GitCafe'
+Category.find_or_create_by name: 'Programing'
+Category.find_or_create_by name: 'Ruby'
+Category.find_or_create_by name: 'Other'

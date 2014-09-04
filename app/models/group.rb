@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
   has_and_belongs_to_many :members, -> {  uniq }, class_name: 'User'
-  belongs_to :categories
+  belongs_to :category
   has_many :topics
   has_many :comments, through: :topics
   belongs_to :owner, class_name: 'User'

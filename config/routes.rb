@@ -28,10 +28,10 @@ ChatterboxRails::Application.routes.draw do
     end
     resources :members
   end
-  resources :categories do
-     root to: 'dashboard#index'
-  end
-  #get '/dashboard' => 'dashboard#index'
+
+  get '/categories' => 'dashboard#index'
+  get '/categories/:category_name' => 'dashboard#category'
+  get '/dashboard' => 'dashboard#index'
 
   root to: 'home#index'
 

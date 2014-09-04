@@ -20,6 +20,8 @@
         .controls
           = f.file_field :icon, id: "group-logo"
     .modal-footer
+      - if @category
+        = f.hidden_field :category_id, value: @category.id
       button.btn data-dismiss="modal" aria-hidden="true" = t 'close'
       = f.submit t('create'), id: 'group-new-submit', class: 'btn btn-primary'
 
