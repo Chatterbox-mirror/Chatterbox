@@ -48,7 +48,15 @@ h4{
 #more{
   position:absolute;
   top:75%;
-  left:42%;
+  left:31%;
+  width:15%;
+  font-size:25px;
+  font-weight:bold;
+}
+#more-login{
+  position:absolute;
+  top:75%;
+  left:51%;
   width:15%;
   font-size:25px;
   font-weight:bold;
@@ -62,6 +70,9 @@ h4{
   background-image:url(/front_end/source/chat02.jpg);
   background-repeat:no-repeat;
   background-size:100%;
+}
+#page3{
+  background:url(../../assets/black_linen_v2.png);
 }
 #slogan{
   background:rgba(255,255,255,0.8);
@@ -86,6 +97,7 @@ h4{
   border-radius:5%;
   width:50%;
   margin: 5em auto;
+  background-color:whitesmoke;
 }
 #sign-up-button{
   background:rgb(231, 76, 60);
@@ -129,7 +141,7 @@ fieldset{
   font-size:4em;
   text-align:center;
   display:inherit;
-  margin:1em 0 0.5em 0;
+  margin:.5em 0 0.5em 0;
 }
 footer{
   height:30%;

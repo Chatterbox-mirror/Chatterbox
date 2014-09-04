@@ -21,24 +21,26 @@ html lang="en"
           | CHATTERBOX
         h2
           | This is what for engineer
-      
+
       a id='more' class='btn btn-large btn-primary' href='#page2'
         | 聊解更多
+      a id='more-login' class='btn btn-large btn-danger' href='#page3'
+        | 立馬登入
 
     div id='page2' class='well'
-      div  id='slogan' 
-        h1 
-          | CHATTERBOX 
+      div  id='slogan'
+        h1
+          | CHATTERBOX
         h1 style='text-align:right;'
           | 「屬於程式聊天空間」
-        h2  
+        h2
           | 讓你的 code 不再被表情符號取代，簡單輕鬆的線上討論空間
-        h3 
-          | 主題分類
-        h4 
+        h3
+          | Category
+        h4
           | 透過分類，可以輕輕鬆鬆的找到你想要參與的 Group
         h3
-          | Group 
+          | Group
         h4
           | 不管是自己創造新的 Group 或是加入已經創立的 Group
         h4
@@ -48,29 +50,36 @@ html lang="en"
         h4
           | 加入群組之後可以任意選擇你喜歡的主題進去
         h4
-          | 跟來自網路上的每個人盡情聊天  
+          | 跟來自網路上的每個人盡情聊天
 
-    div id='page3' class='well'
-      div  id='sign-up-filter'
-        i class='fa fa-users ' id='symbol-for-sign-up'
-        a href='/users/sign_up' id='sign-up-button' 
-          | 現在就馬上註冊
+    .well#page3
+      #sign-up-filter
+        .row-fluid
+          .span12
+            i class='fa fa-users ' id='symbol-for-sign-up'
+            a href='/users/sign_up' id='sign-up-button'
+              | 沒有帳號？立即註冊！
+        .row-fluid
+          .span12
+            i class='fa fa-sign-in ' id='symbol-sign-in'
 
-        i class='fa fa-sign-in ' id='symbol-sign-in'
         form#sign-in-form action="/users/sign_in" method="post"
           input name="authenticity_token" type="hidden" value="#{form_authenticity_token}"
-            fieldset
-              .field.input-append
-                input id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
-                  span.add-on
-                    i.icon-user
-                  .field.input-append
-                    input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
+            .row-fluid
+              .span6
+                .field.input-append style="float: right;"
+                  input id="user_email"  name="user[email]" type="text" placeholder=t('index.login')
                     span.add-on
-                      i.icon-key
-                  .actions
-                    input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value='我已經有帳號' 
+                      i.icon-user
+              .span6 style="margin-left: 0px;"
+                .field.input-append style="float: left;"
+                  input autocomplete="off" id="user_password" name="user[password]" type="password" placeholder=t('password')
+                  span.add-on
+                    i.icon-key
+            .row-fluid
+              .span12
+                .actions
+                  input class='btn btn-primary btn-large btn-block' id='sign-in-submit' type="submit" value='我已經有帳號，登入吧！'
 
     footer
-      p about / help 
       p powered by GitCafe
