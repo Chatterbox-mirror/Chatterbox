@@ -36,7 +36,7 @@ class window.Puller
         if not window.focused
           item = $(nodes[nodes.length - 1])
           author = $('.comment-info span', item).text()
-          avatar_url = $('.comment-avatar img').attr('src')
+          avatar_url = $('.comment-avatar img', item).attr('src')
           content = $('.comment-content', item).text()
           new Notify(author + '@' + @originalTitle, {
             body: content
