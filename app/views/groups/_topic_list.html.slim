@@ -20,22 +20,3 @@ div.text-center.title
       = link_to 'Archive', closed_group_topics_path(@group, id: @topic.try(:id)), remote: true
 ul.nav.nav-pills.nav-stacked.topics-list
     = render 'topics/topic_list', topic_list: topic_list, active_topic: @topic
-
-
-/ ruby:
-/   if @topic && @topic.closed?
-/     topic_list = @group.topics.closed
-/     status = 'closed'
-/   else
-/     topic_list = @group.topics.open
-/     status = 'open'
-/   end
-
-/ ul#topic-list-nav.nav.nav-pills
-/   li#topic-list-open data-status='open' class="#{status == 'open' && 'active'}"
-/     = link_to '活跃', open_group_topics_path(@group, id: @topic.try(:id)), remote: true
-/   li#topic-list-closed data-status='closed' class="#{status == 'closed' && 'active'}"
-/     = link_to '存档', closed_group_topics_path(@group, id: @topic.try(:id)), remote: true
-
-/ ul.topic-list
-/   = render 'topics/topic_list', topic_list: topic_list, active_topic: @topic
