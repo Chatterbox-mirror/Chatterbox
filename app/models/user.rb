@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
 
 	def gravatar
-		"https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}.png?s=64&d=identicon&r=PG&f=1"
+		"https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}.png?s=64&d=identicon"
 	end
 
   def after_database_authentication
