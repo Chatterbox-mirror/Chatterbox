@@ -5,7 +5,8 @@ module Redcarpet
         language = 'text' if language.blank?
 
         if Pygments::Lexer.find(language)
-          Pygments.highlight(code, :lexer => language, :options => {:encoding => 'utf-8'})
+          lang_div = '<div class="highlight-lang"><span><i class="fa fa-code"></i> ' + language + '</span></div>'
+          lang_div + Pygments.highlight(code, :lexer => language, :options => {:encoding => 'utf-8'})
         else
           Pygments.highlight(code, :options => {:encoding => 'utf-8'})
         end
