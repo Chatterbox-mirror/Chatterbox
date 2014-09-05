@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+		@group.members << current_user if @group.members.find_by_id(current_user.id).nil?
     respond_with @group do |format|
       format.html { redirect_to [@group, @group.topics.first] if @group.topics.count > 0 }
     end
