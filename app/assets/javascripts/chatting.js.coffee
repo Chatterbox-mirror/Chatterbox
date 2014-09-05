@@ -33,6 +33,16 @@ class window.Puller
       if data.length > 0
         $('#comments').scrollTo('100%')
         window.alertSound.play() if window.alertSound and toAlert
+        if not window.focused
+          item = $(nodes[nodes.length - 1])
+          author = $('.comment-info span', item).text()
+          avatar_url = $('.comment-avatar img').attr('src')
+          content = $('.comment-content', item).text()
+          new Notify(author + '@' + @originalTitle, {
+            body: content
+            icon: avatar_url
+            tag: @originalTitle
+          }).show()
         @updateTitle(nodes)
       $('#comments').timeago('refresh')
     .always =>
@@ -56,3 +66,6 @@ $(document).on 'keydown', 'textarea', (e) ->
       $(this.form).trigger('submit.rails') if $.trim(this.value) != ''
       # e.preventDefault()
       false
+$ ->
+  if Notify.needsPermission()
+    Notify.requestPermission(null, null)

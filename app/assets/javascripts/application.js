@@ -28,6 +28,7 @@
 //= require vendor/soundmanager2-nodebug-jsmin
 //= require chatting
 //= require jquery.atwho/index
+//= require vendor/notify
 
 soundManager.setup({
   onready: function() {
