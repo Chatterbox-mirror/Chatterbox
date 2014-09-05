@@ -39,3 +39,9 @@ coffee:
     return false
   $('.dashboard').on 'click', 'group-edit-btn', ->
   $('.searchable .timeago').timeago();
+  $('#search-input').on 'change paste keyup', ->
+    value = $(this).val()
+    if (!value)
+      $("#m-search").html("")
+      return
+    $("#m-search").html('tr.searchable:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}')
