@@ -1,8 +1,4 @@
 jQuery(function($){
-  $('#Search-btn').click(function(){
-    $(this).hide();
-    $('#search-input').show();
-  });
   var that = $(this);
   var mSearch = $("#m-search");
   $("#search-input").bind("change paste keyup", function(){
@@ -11,6 +7,6 @@ jQuery(function($){
       mSearch.html("");
       return;
     }; 
-    mSearch.html('tr:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
+    mSearch.html('tr.searchable:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
   });
 });

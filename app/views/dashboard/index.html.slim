@@ -13,16 +13,12 @@
       .span6
         p.title Group List
       .span6.text-right
-          button.btn id='Search-btn'
-            i.fa.fa-search
-            | Search
-          input id="search-input" type="text" placeholder="Search" 
-            style id="m-search"
-
           - unless @category.nil?
             button.btn#group-new-btn
               i.fa.fa-users
               | Create Group
+          input id="search-input" type="text" placeholder="Search" style="margin-bottom: 0px; margin-left: 5px;"
+            style id="m-search"
     table.table
       thead
         tr
@@ -55,3 +51,4 @@ coffee:
     $('#group-new-modal').modal('toggle')
     return false
   $('.dashboard').on 'click', 'group-edit-btn', ->
+  $('.searchable .timeago').timeago();

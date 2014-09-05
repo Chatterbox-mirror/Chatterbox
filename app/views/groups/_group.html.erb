@@ -1,4 +1,4 @@
-<tr data-index= <%= group.name %>>
+<tr class="searchable" data-index="<%= group.name.downcase %>" >
   <td>
     <img class="img-rounded group-logo-64-<%= group.id %>" src="<%= group.icon.thumb %>" width="20" height="20" />
     <%= link_to group.name, group %>
@@ -14,5 +14,5 @@
 <% end %>
   <td><%= group.topics.count %></td>
   <td><%= group.member_count %></td>
-  <td><%= group.updated_at %></td>
+	<td><time class="timeago" datetime="<%= group.updated_at.iso8601 %>"><%= group.updated_at %></time></td>
 </tr>
