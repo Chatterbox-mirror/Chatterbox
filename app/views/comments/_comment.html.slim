@@ -5,7 +5,8 @@ li data-comment-id="#{comment.id}"
 
   .comment-detail
     .comment-info
-      = comment.author_name
+      span style="color:#BFFF00;"
+        = comment.author_name
       time.muted.pull-right.timeago datetime=="#{comment.created_at.iso8601}"
        | #{comment.created_at}
     .comment-content
